@@ -30,9 +30,8 @@ def bag_contents(request):
                     'item_id': item_id,
                     'quantity': quantity,
                     'product': product,
-                    'size': size,
                 })
-                
+
     grand_total = total
     
     context = {
