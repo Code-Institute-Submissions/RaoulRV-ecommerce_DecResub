@@ -3,11 +3,10 @@ html {
 }
 
 body {
-    background: url('/media/Supercars-at-The-British-Motor-Show-2022.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #555;
-    font-family: 'Lato';
+    color: #9b8027;
+    font-family: 'Space Grotesk', sans-serif;
 }
 
 /* from Bulma */
@@ -20,26 +19,30 @@ body {
 }
 
 .logo-font {
-    text-transform: uppercase;
+    width: 100%;
+    height: auto;
+    max-height: 400px;
 }
 
 .main-logo-link {
     width: fit-content;
+
 }
 
 .shop-now-button {
-    background: black;
-    color: white;
+    background: #000000;
+    color: black;
     min-width: 260px;
+    -webkit-text-stroke: 1px #9b8027;
 }
 
 .btn-black {
-    background: black;
+    background: #9b8027;
     color: white;
 }
 
 .btn-outline-black {
-    background: white;
+    background: #9b8027;
     color: black !important; /* use important to override link colors for <a> elements */
     border: 1px solid black;
 }
@@ -47,7 +50,7 @@ body {
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
-    background: black;
+    background: #d4af37;
     color: white !important;
 }
 
@@ -57,12 +60,12 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
+    background: #d4af37;
     color: white;
 }
 
 .text-black {
-    color: #000 !important;
+    color: #9b8027 !important;
 }
 
 .border-black {
@@ -75,13 +78,20 @@ body {
 	top: 0;
 	left: 0;
 	position: fixed;
-	background: white;
+	background: rgb(255, 255, 255);
 	z-index: -1;
+}
+
+.hero-video {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
 }
 
 
 a.category-badge > span.badge:hover {
-    background: #212529 !important;
+    background: #d4af37 !important;
     color: #fff !important;
 }
 
@@ -167,6 +177,16 @@ a.category-badge > span.badge:hover {
     overflow-y: auto;
 }
 
+#bannertext {
+    color: #fdeff9;
+    font-size: 65px;
+  
+    text-shadow: 2px 2px #d4af37, 6px 6px #000000;
+  
+    transform: skewY(-5deg);
+    -webkit-text-stroke: 0.3px #ffffff;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -174,6 +194,20 @@ a.category-badge > span.badge:hover {
   .container {
     max-width: 80%;
   }
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .hero-video{
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-aspect-ratio: 16/9) {
+    .hero-video{
+        width: auto;
+        height: 100%;
+    }
 }
 
 
@@ -229,7 +263,7 @@ a.category-badge > span.badge:hover {
 }
 
 .allauth-form-inner-content a {
-	color: #17a2b8; /* text-info */
+	color: #d4af37; /* text-info */
 }
 
 
@@ -286,3 +320,4 @@ a.category-badge > span.badge:hover {
         height: calc(100vh - 116px);
     }
 }
+

@@ -20,7 +20,7 @@ class Product(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
-    price = models.DecimalField(max_digits=7, decimal_places=3)
+    price = models.DecimalField(max_digits=15, decimal_places=0)
     horse_power = models.IntegerField(null=True, blank=True)
     brand = models.CharField(max_length=254, null=True, blank=True)
     msrp = models.IntegerField(null=True, blank=True)

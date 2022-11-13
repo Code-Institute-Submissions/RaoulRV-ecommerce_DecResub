@@ -14,14 +14,17 @@
 
 <div class="container h-100">
     <div class="row h-100">
-        <div class="col-7 col-md-6 my-auto">
-            <h1 class="display-4 logo-font text-black">
-                New cars available today!
+        <video autoplay loop muted plays-inline class="hero-video">
+            <source src="media/hero.mp4" type="video/mp4">
+        </video>
+        <div class="col-7 col-md-8 my-auto">
+            <h1 id="bannertext" class="display-4 logo-font text-black">
+                Drive your dream car today!
             </h1>
 
             <div class="my-5">
                 <h4>
-                    <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Browse Now</a>
+                    <a href="{% url 'products' %}" class="shop-now-button btn btn-lg rounded-0 text-uppercase py-3">Browse Cars</a>
                 </h4>
             </div>
         </div>
