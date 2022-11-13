@@ -48,12 +48,38 @@
                         <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                     </small>
                 {% endif %}
+                <p class="small mt-1 mb-0">
+                    <a class="text-muted">
+                        <p><strong>Horse Power : {{ product.horse_power }} </strong></p>
+                    </a>
+                </p>
+                <p class="small mt-1 mb-0">
+                    <a class="text-muted">
+                        <p><strong>Brand :  {{ product.brand }} </strong></p>
+                    </a>
+                </p> 
+                <p class="small mt-1 mb-0">
+                    <a class="text-muted">
+                        <p><strong>MSRP :  ${{ product.msrp }}</strong></p>
+                    </a>
+                </p>
+                <p class="small mt-1 mb-0">
+                    <a class="text-muted">
+                        <p><strong>Top Speed :  {{ product.speed }} MPH </strong></p>
+                    </a>
+                </p>        
                     <p class="mt-3">{{ product.description }}</p>
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
                             <div class="col-12">
-                                <p class="mt-3"><strong>Days:</strong></p>
+                                <p><strong>Start Date:</strong></p>
+                                <input type="date" id="start" name="trip-start"
+                                value="2022-07-22"
+                                min="2022-01-01" max="2023-12-31">
+                            </div>                           
+                            <div class="col-12">
+                                <p class="mt-3"><strong>Number of Days:</strong></p>
                                 <div class="form-group w-50">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
