@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /bag/
+Crawl-delay: 3
+Sitemap: https://luxuryrentals.herokuapp.com/sitemap.xml
