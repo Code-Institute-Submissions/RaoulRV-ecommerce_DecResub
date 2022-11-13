@@ -1,0 +1,1 @@
+web: gunicorn car_ecom.wsgi:application
