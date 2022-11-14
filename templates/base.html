@@ -4,7 +4,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <link rel="icon" type="image/png" sizes="32x32" href="/media/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ MEDIA_URL }}favicon.ico">
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta charset="utf-8">
@@ -47,7 +47,7 @@
       <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
           <a href="{% url 'home' %}" class="nav-link main-logo-link">
-            <img class= "logo-font my-0" src="/media/logo.JPG">
+            <img class= "logo-font my-0" src="{{ MEDIA_URL }}logo.jpg">
           </a>
         </div>
 
