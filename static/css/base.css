@@ -198,12 +198,12 @@ a.category-badge > span.badge:hover {
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
+ @media (min-width: 1200px) {
   .container {
     max-width: 80%;
   }
 }
-
+/*
 @media (min-aspect-ratio: 16/9) {
     .hero-video{
         width: 100%;
@@ -216,7 +216,7 @@ a.category-badge > span.badge:hover {
         width: auto;
         height: 100%;
     }
-}
+} */
 
 
 
