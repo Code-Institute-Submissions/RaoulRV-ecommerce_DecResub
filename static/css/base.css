@@ -426,11 +426,7 @@ a.category-badge > span.badge:hover {
     transition:all .25s;
   }
   
-  #mc_embed_signup {
-    background:#fff; 
-    clear:left; 
-    font:14px Helvetica,Arial,sans-serif;  
-    width:600px;}
+
 
   .footer-distributed .footer-right a:hover{transform:scale(1.1); -webkit-transform:scale(1.1);}
   
@@ -450,3 +446,10 @@ a.category-badge > span.badge:hover {
       line-height: 1.8;
     }
   }
+
+  #mc_embed_signup {
+    background:#fff; 
+    clear:left; 
+    font:14px Helvetica,Arial,sans-serif;  
+    width:300px;
+}
