@@ -7,6 +7,11 @@ body {
     height: calc(100vh - 164px);
     color: #9b8027;
     font-family: 'Space Grotesk', sans-serif;
+
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
 }
 
 /* from Bulma */
@@ -360,13 +365,13 @@ a.category-badge > span.badge:hover {
 /* Footer */
 
 .footer-distributed {
-    background-color: #292c2f;
+    background: transparent;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
     box-sizing: border-box;
     width: 100%;
     text-align: left;
     font: normal 16px sans-serif;
-    padding: 45px 50px;
+    padding: 10px 20px;
   }
   
   .footer-distributed .footer-left p {
@@ -379,7 +384,7 @@ a.category-badge > span.badge:hover {
   .footer-distributed p.footer-links {
     font-size: 18px;
     font-weight: bold;
-    color: #ffffff;
+    color: #000000;
     margin: 0 0 10px;
     padding: 0;
     transition: ease .25s;
@@ -397,7 +402,7 @@ a.category-badge > span.badge:hover {
     content: "·";
     font-size: 20px;
     left: 0;
-    color: #fff;
+    color: #33383b;
     display: inline-block;
     padding-right: 5px;
   }
@@ -416,10 +421,10 @@ a.category-badge > span.badge:hover {
     display: inline-block;
     width: 35px;
     height: 35px;
-    background-color: #33383b;
+    background-color: #ffffff;
     border-radius: 2px;
     font-size: 20px;
-    color: #ffffff;
+    color: #33383b;
     text-align: center;
     line-height: 35px;
     margin-left: 3px;
@@ -448,8 +453,21 @@ a.category-badge > span.badge:hover {
   }
 
   #mc_embed_signup {
-    background:#292c2f; 
+    background: transparent;
     clear:left; 
     font:14px Helvetica,Arial,sans-serif;  
-    width:235px;
+    width:100%;
+    max-width: 400px;
+}
+
+.footer-distributed{
+    margin-top: auto;
+}
+
+#subscribe{
+    color: #000000;
+    font-size: 120px;
+  
+  
+    -webkit-text-stroke: 0.5px #ffffff;
 }
