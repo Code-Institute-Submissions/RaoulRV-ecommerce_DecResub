@@ -203,7 +203,7 @@ a.category-badge > span.badge:hover {
     max-width: 80%;
   }
 }
-/*
+
 @media (min-aspect-ratio: 16/9) {
     .hero-video{
         width: 100%;
@@ -216,7 +216,9 @@ a.category-badge > span.badge:hover {
         width: auto;
         height: 100%;
     }
-} */
+}
+
+
 
 
 
@@ -371,7 +373,7 @@ a.category-badge > span.badge:hover {
     width: 100%;
     text-align: left;
     font: normal 16px sans-serif;
-    padding: 10px 20px;
+    padding-right: 10px;
   }
   
   .footer-distributed .footer-left p {
