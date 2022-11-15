@@ -315,9 +315,33 @@ I used COOLORS to generate this:
 - It allows us to do all the CRUD actions that we require and can really manage the whole store flawlessly.
 - I can also change a users status or give them permisions.
 
+# SEO
+
+## sitemap.xml
+- I generated a sitemap.xml file from XML-sitemaps and downloaded it.
+- I then added it to my projects root file to help search engines identifying my site properly and navigate more easily.
+
+## Tags
+![hero](media/ariatags.JPG)
+
+- I've made sure to add lots of descriptive keywords in meta tags ands aria labels in most of my code just to improve SEO.
+
+## robots.txt 
+
+- I also added a file called robots.txt that instructs the search engine where to look and where not to look in our site, this also improves SEO a lot.
 
 
+# STRIPE
 
+- On this project we implemented a service called Stripe to handle payments from our customers.
+- Once you set up webhooks successfully you should be able to see payments succeed in your Stripe dashboard.
+- If you would like to test purchase anything on my website you can use these card details:
+    - Card number: 4242 4242 4242 4242
+    - expiry: any date in the future
+    - cvs: 42424
+
+### As you can see my Stripe webhooks and payments have gone through successfully.
+![hero](media/stripesuccess.JPG)
 
 
 
@@ -500,13 +524,77 @@ I also used Lighthouse on most pages and they were all good scores, Accesibility
 #### I used the "black" feature to check python code in most pages and it returned no error.
 
 
+# Deployment
+
+## 1. Get the project running locally with Django
+
+- Go to Code Institutes Github
+
+- On the Code Institute's "Full template", click on the "Use this Template" button.
+
+- Open Gitpod from the template and inside Gitpod take the following steps:
+- Install Gunicorn with pip3 "install Gunicorn" and also install django 
+- Next you need to install the database libraries with : pip3 install dj_database_url psycopg2
+- Time to create your Django project, in the terminal window type: django-admin startproject your-chosen-name
+- Next start your Django app with : python3 manage.py startapp your_app_name
+- Add your app to the settings.py file
+- You should be good to go with django now, just type: python3 manage.py runserver
+
+
+## 2. Implement Heroku and AWS
+
+- Create a Heroku account if you dont have one
+
+- Create a new app on heroku by clicking top right "Create new app"
+
+- Go through the steps and select your region
+
+- Click on the Settings tab of your new heroku tab
+
+- Reveal Config vars and add the following configs: 
+
+SECRET_KEY
+
+AWS_ACCESS_KEY_ID
+
+AWS_SECRET_ACCESS_KEY
+
+EMAIL_HOST_PASS
+
+EMAIL_HOST_USER
+
+STRIPE_PUBLIC_KEY
+
+STRIPE_SECRET_KEY
+
+STRIPE_WH_SECRET
+
+DISABLE_COLLECTSTATIC = 1
+
+- Now go down to the Buildpack section click Add Buildpack then select python and Save Changes
+
+- Click on the Deploy tab lower down the page
+
+- Select Github when prompted
+
+- Confirm you want to connect to GitHub and search for the repository then click the connect button
+
+- Make sure you click on Enable Automatic Deploys so heroku deploys whenever you git push
+
+- Create a Procfile "web: gunicorn your_project_name.wsgi"
+- When you've finished coding your website make sure you change the DEBUG to False in settings.py
+- Go back to heroku and take the following steps:
+    - settings > config vars delete the record for DISABLE_COLLECTSTATIC
+
+    - settings > config vars set the record for USE_AWS to True
+
+
 ## Technology Used
 
 - HTML5
 - CSS3
 - Python
 - Django
-- Cloudinary
 - Bootstrap
 - FontAwesome
 - Google Fonts
@@ -517,10 +605,15 @@ I also used Lighthouse on most pages and they were all good scores, Accesibility
 - Balsamiq
 - PostgreSQL
 - Allauth
-- Summernote
+- Jquery
+- AWS
+- Stripe
 
 
 ## Credits
+- Romans International for the pictures of cars
+- Pexels for the background video
+- Boutique-ado walk through for the template
 - Looka - Created custom logo
 - Previous projects done by Code Institute students - Also a big source of inspiration
 - Code Institute Tutor Team - They were a huge help and I couldn't complete this project without them.
