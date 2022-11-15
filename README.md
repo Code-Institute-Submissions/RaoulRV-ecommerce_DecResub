@@ -30,16 +30,14 @@ Live link to [Luxury Rentals](https://luxuryrentals.herokuapp.com/)
 * [Features](#features)
     + [Header](#header)
     + [Footer](#footer)
-    + [Home Page](#home-page)
-    + [About Page](#about-page)    
+    + [Hero](#hero)
+    + [All Cars](#all-cars)
+    + [Car Detail](#car-detail)     
     + [Sign Up Page](#sign-up-page)
     + [Log In Page](#log-in-page)
-    + [Log Out Page](#log-out-page)        
-    + [Post Detail Page](#post-detail-page)
-    + [Post Item Page](#post-item-page)
-    + [Delete Post Page](#delete-post-page)
+    + [Log Out Page](#log-out-page)  
+    + [Product Management](product-management)      
     + [Admin Page](#admin-page)
-    + [Features Not Implemented](#features-not-implemented)
 * [SEO](#seo)
 * [Stripe](#stripe)
 * [Testing](#testing)
@@ -220,6 +218,107 @@ I used COOLORS to generate this:
 - Used DrawSQL to present my models
 
 ![data](media/datamodel.png)
+
+# Features
+
+## Header
+
+- I made a unique logo for the header using the Looka website; it was free and simple to use. You can see it in the top left
+- The search bar is one of the first things a user notices and its nicely styled to fit with the rest of the website.
+- There are 3 navigation buttons which have dropdown menus to select further categories.
+- In the top right you can notice the "My Garage" icon which is like a profile for the user where he can see his previously rented cars.
+- You can also see the shopping cart icon. 
+
+![header](media/navbarsearch.JPG)
+
+## Footer
+![footer](media/footer.JPG)
+- On the left there is a mailchimp signup form which I have made transparent to fit in with the websites theme.
+- I have links to Facebook, Twitter, Instagram, and Youtube in the footer section.
+- When you hover over the icons, you get feedback and they are totally interactive.
+- To avoid diverting the user, when an icon is clicked, the page will open in a new tab.
+
+## Hero
+![hero](media/herovid.JPG)
+- I named this the hero section because its the most striking aspect of the website.
+- The video plays in the background muted and in a loop slowly moving around the supercar.
+- There is a call to action for people who want to drive nice cars as well and a button for them to check out our inventory
+
+## All Cars
+![hero](media/allcars.JPG)
+- Here you can see all the cars in our inventory with some short details about them. 
+## Car Detail
+![hero](media/cardetail.JPG)
+- In this section you can notice more detailed description of the car and more technical specifications.
+
+- This view includes horsepower, msrp, top seed etc.
+
+- You can also add to cart from this view after selecting how many days you want to rent and your starting date
+
+## Sign Up Page
+![hero](media/signup.JPG)
+- In this page you can see the regular sign up form
+
+- It has validation and stops you from using bad emails or bad passwords
+
+## Log In Page
+
+![hero](media/signin.JPG)
+### Log Out Page
+![hero](media/signout.JPG)
+- Here are both the login and log out pages
+
+## Product Management
+![hero](media/productmanagement.JPG)
+
+- In this page you can add a new car into our fleet from the website, no need to go in admin page.
+- Just fill up the correct fields in the form.
+
+## Shopping Cart
+![hero](media/shoppingcart.JPG)
+
+## Order Success
+![hero](media/checkedout.JPG)
+
+- In this page , you are presented with a quick rundown of your order details that you have just placed.
+## Checkout
+![hero](media/checkout.JPG)
+
+- In the checkout view you can fill in your personal details and and press secure checkout to buy your rental package!
+
+## My Garage
+![hero](media/mygarage.JPG)
+
+- In the "my garage" page you are presented with a form to store your personal details which youve used previously and  also an order history of cars that you have rented before !
+
+## Various Toast Messages
+![hero](media/signintoast.JPG)
+
+![hero](media/signouttoast.JPG)
+
+![hero](media/ordersuccess.JPG)
+
+![hero](media/checkouttoast.JPG)
+
+- There are various messages that pop up accross the website whenever we complete an action or whenever it gives us a warning.
+- These ones are mostly positive and there are a couple more messages that will pop up if you do something wrong.
+
+## 404 Page
+![hero](media/404.JPG)
+
+- This is our 404 page thats used to throw out errors whenever a user is attempting to access a page that doesn't work or hes not allowed to.
+
+## Admin Page
+![hero](media/adminpage.JPG)
+
+- As you can see our admin page is well structured and organized.
+- It allows us to do all the CRUD actions that we require and can really manage the whole store flawlessly.
+- I can also change a users status or give them permisions.
+
+
+
+
+
 
 
 # Testing
