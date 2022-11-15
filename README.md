@@ -70,12 +70,14 @@ According to Statista.com , a stats website there has been a 100% increase in su
 From the research I've done on sites like Google Analytics and Statista.com there are TWO types of people who "Luxury Rentals" will appeal to.
 
 ### Middle Class :
-    People who make decent income and sometimes treat themselves to a nice few days of driving a supercar or luxury car. 
+
+People who make decent income and sometimes treat themselves to a nice few days of driving a supercar or luxury car. 
     
-    This category also includes the ones who rent a supercar to show off online as from my research this is extremely common nowadays.
+This category also includes the ones who rent a supercar to show off online as from my research this is extremely common nowadays.
 
 ### Wealthy People :
-    People with lots of money who travel a lot and maybe cannot bring their personal cars with them. Luxury Rentals is here to fulfil their needs and have them travel in style.
+
+People with lots of money who travel a lot and maybe cannot bring their personal cars with them. Luxury Rentals is here to fulfil their needs and have them travel in style.
 
 ## Market Strategy
 
@@ -113,14 +115,106 @@ You can view my user stories in the kanban [board here.](https://github.com/user
 ![kanban](media/kanban.JPG)
 
 
+# User Experience
+
+## Scope
+
+In order to present the user with a compelling experience and have him enjoy his visit on our website, Luxury Rentals needs to tick a few boxes. The list below is an absolute must if we would like the user to return and recommend us to others.
+
+Luxury Rentals needs to have these features: 
 
 
+- Users can create and maintain their accounts using Django All-Auth registration and functionality.
+
+- A landing page that makes it very apparent what the site is used for.
+
+- A user profile page where users may view their order history and save billing information for quicker orders in the future.
+
+- A Products Page that displays all of the Products found in the category or through the search.
+
+- Products Cards that display an image of the item, its name, price, and an option to click for further information.
+
+- A Search Bar, My Account Links, Shopping Cart Links, and Product Categories sections are included in the site navigation.
+
+## User Stories
+
+### Super-users
+
+1. As a **superuser** I can **add cars** so that **I can have more cars available to rent**
+
+2. As a **superuser** I can **edit a car entry** so that **I can change its price, details, description**
+
+3. As a **superuser** I can change a normal users permisions so that I can stop a user from using my website if needed
+
+4. As a **superuser** I can **send emails to customers** so that **I can more easily market my available stock of cars or send them news about our store**
+
+5. As a **superuser** I can **add different categories of cars or change existing categories** so that **I am able to manage each entry properly**
+
+6. As a **superuser** I can **delete a car entry** so that **I can manage my website properly and remove old cars when they break or aren't available**
+
+### Users
+
+7. As a **user** I can **use the recover password options** so that **to recover my password in case i forget**
+
+8. As a **user** I can **receive a confirmation email when registering** so that **click the confirmation link be sure i am registered**
+9. As a **user** I can **easily register for an account on the website** so that **receive benefits of a logged in user**
+10. As a **user** I can search by using a simple searchbar so that i can find exactly the car im looking to rent
+11. As a **user** I can sort cars by specific category easily so that i can choose which type of car i want
+12. As a **user** I can **select the start date of a rental package** so that **i know when to go pick up my car**
+13. As a **user** I can **see my order details** so that **i can verify the car i chose and the amount of days**
+14. As a **user** I can **pay safely without having to worry about my details being stole** so that **i can shop with confidence**
+15. As a **user** I can adjust the rental packages i saved in my cart so that i can remove cars or add more days to rent
+16. As a **user** I can buy rental packages without being logged in ** so that ** I dont need to create an account before renting
+17. As a **user** I can **easily view a list of cars ** so that **decide which one to rent**
+18. As a **user** I can **click on a specific car ** so that see relevant information about its caracteristics
+19. As a **user** I can sign up for the newsletter so that i can receive the latest updates
+20. As a **user** I can **add payment info easily when checking out** so that **i dont have to spend much time before buying**
+21. As a **user** I can **visit their facebook store page** so that **interact with the comunity closer**
+22. As a **user** I can **add rental cars into my shopping cart ** so that **I can see how much i am spending and the total cost**
+
+# Design Scheme
+To make this project stand out among other vehicle rental companies, which tend to be dated, I wanted to develop a fresh, bright brand.
+
+This was done with aid of a great "hero" video of a McLaren supercar which I will describe further in the "Features" section.
+
+## Wireframes
+
+### Homepage
+![wire](media/homepagewire.png)
+
+### Cars View
+![wire](media/productswire.png)
+
+### Car Details Page
+![wire](media/productdetailswire.png)
+
+### Shopping Cart
+![wire](media/shoppingcartwire.png)
+
+## Colors
+
+I chose a straightforward and understated color scheme. Two different shades of gold were used, and there were also some black and white accents for buttons and backgrounds. This accentuates the luxurious feel of the site.
+
+The flat, dark lighting of the hero video also draws attention to the colors.
+
+I used COOLORS to generate this:
+
+![colors](media/luxuyrentalscolors.png)
 
 
-### Colour Scheme
+## Fonts
+
+- I used a font named Space Grotesk because its modern and looks fast & cool so it fits with the theme of the supercar site. 
+
+- You can find the font here [Space Grotesk](https://fonts.google.com/specimen/Space+Grotesk)
+
+## Images
+
+- Images were taken from "Romans International," a different luxury automobile store, and the quality was excellent. In addition, the setting complemented the subject of my website.
+
+- The hero imagine isn't an image either its a video that loops of a supercar.
 
 
-![header](static/images/colors.PNG)
 
 
 
