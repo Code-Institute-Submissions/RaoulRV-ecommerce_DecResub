@@ -4,7 +4,7 @@
 
 Website description
 
-Live link to [Luxury Rentals](https://)
+Live link to [Luxury Rentals](https://luxuryrentals.herokuapp.com/)
 
 
 
