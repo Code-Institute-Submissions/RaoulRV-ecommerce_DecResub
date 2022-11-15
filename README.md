@@ -2,7 +2,13 @@
 
 ![header](/media/responsive.JPG)
 
-Luxury Rentals 
+Luxury Rentals is an ecommerce web application aimed at people who enjoy high-end cars. This business is meant to give people an opportunity to rent expensive cars at a fraction of their cost. This way they can have life changing experiences without actually paying hundreds of thousands.
+
+Users can browse a large inventory of supercars available on the website. They have access to a search bar to use when looking for a specific car or brand as well as multiple ways to sort through different categories. Every car has a couple of upfront details you can see right away but also more detailed information once you click on the entry.
+
+The customer can also register with his email and create an account. 
+While registered he can modify his profile to include personal billing details, which he can use to check out once hes ready to purchase a rental package. The payments are safely managed via Stripe.
+
 
 Live link to [Luxury Rentals](https://luxuryrentals.herokuapp.com/)
 
@@ -11,7 +17,7 @@ Live link to [Luxury Rentals](https://luxuryrentals.herokuapp.com/)
 ## TABLE OF CONTENTS
 * [Market Research](#market-research)
     - [Target Audience](#target-audience)
-    - [Strategy](#strategy)
+    - [Market Strategy](#market-strategy)
 * [Agile](#agile)
 * [User Experience](#user-experience)
     + [User Stories](#user-stories)
@@ -44,87 +50,70 @@ Live link to [Luxury Rentals](https://luxuryrentals.herokuapp.com/)
 * [Credits](#credits)
 
 
-## Features
 
-### Header
+# Market Research
 
-![header](static/images/header.PNG)
+Luxury Rentals is set up as a B2C (business to customer) model. This means that any person can use our website to rent a supercar, sportscar, racecar or luxurious limousine.
 
+Nowadays everyone wants to be seen as rich or afluent by their peers and theres no better way to do that than driving an expensive car. 
 
+That will be our main clientele.
 
-![header](static/images/header2.PNG)
+Once the global situation happend a few years ago car prices have skyrocketed which has also trickled down into the high end rental market and the profits are high.
 
+According to Statista.com , a stats website there has been a 100% increase in supercar purchases in the last few years, which indicates the money is there. 
 
+![statista](media/statista.JPG)
 
+## Target Audience
 
-### Footer
+From the research I've done on sites like Google Analytics and Statista.com there are TWO types of people who "Luxury Rentals" will appeal to.
 
-![header](static/images/footer.PNG)
+### Middle Class :
+    People who make decent income and sometimes treat themselves to a nice few days of driving a supercar or luxury car. 
+    
+    This category also includes the ones who rent a supercar to show off online as from my research this is extremely common nowadays.
 
+### Wealthy People :
+    People with lots of money who travel a lot and maybe cannot bring their personal cars with them. Luxury Rentals is here to fulfil their needs and have them travel in style.
 
+## Market Strategy
 
-### Home Page
-
-![header](static/images/homepage.PNG)
-
-
-
-### About Page
-
-![header](static/images/about.PNG)
-
-
-
-### Sign Up Page
-
-![header](static/images/signup.PNG)
+### Our main Marketing Platform will be TikTok, since they are currently the most popular among young males and females. From our research their hashtag system and ability to show up in front of everyones eyes regardless of age or gender makes it an obvious choice. Tiktok is absolutely huge for high end cars right now.
 
 
+We would pay or give discounts to influencers with large following and have them show our cars and websites in the background.
 
 
-### Log In Page
+![tiktok](media/tiktokmarketing.jpg)
 
-![header](static/images/login.PNG)
+### Our secondary marketing platform is Facebook as it is still number one in terms of users and interraction worldwide. 
 
+Luxury Rentals has a facebook page where you can contact us and keep in touch. This is vital nowadays since most young people do everything through facebook, not outside websites. 
 
+Here is a mockup of the Facebook page made with Balsamiq.
 
-### Log Out Page
+![facebook](media/facebookwire.png)
 
-![header](static/images/logout.PNG)
+## Mailchimp
 
+We also use a sign-up form for our newsletter that lets users subscribe to us and receive promotional material, this is also very important to our marketing efforts. The email lists collected by this form are valuable in todays always online world so our admin can send the subscribed users small rewards and discounts.
 
-
-### Post Detail Page
-
-![header](static/images/postdetail.PNG)
-
-
+![chimp](media/mailchimpsub.JPG)
 
 
-### Post Item Page
+# Agile
 
-![header](static/images/postitem.PNG)
+In order to complete this project I have used the Agile Methodology. This involves breaking down the project into smaller tasks called User Stories. These user stories were added using githubs Issues functionality. Each user story was made into an issue and added to the projects kanban board. 
 
+I originally created my own user stories using an offline method but recently I've also uploaded them to github in the Projects section.
 
+You can view my user stories in the kanban [board here.](https://github.com/users/RaoulRV/projects/3)
 
-### Delete Post Page
-
-![header](static/images/delete.PNG)
+![kanban](media/kanban.JPG)
 
 
 
-### Admin Page
-
-![header](static/images/admin.PNG)
-
-
-
-### Features Not Implemented
-
-
-
-
-## Design Idea
 
 
 
@@ -316,3 +305,81 @@ I've used Heroku to host my website and in the following steps I will be describ
 - Looka - Created custom logo
 - Previous projects done by Code Institute students - Also a big source of inspiration
 - Code Institute Tutor Team - They were a huge help and I couldn't complete this project without them.
+
+
+
+
+### Header
+
+![header](static/images/header.PNG)
+
+
+
+![header](static/images/header2.PNG)
+
+
+
+
+### Footer
+
+![header](static/images/footer.PNG)
+
+
+
+### Home Page
+
+![header](static/images/homepage.PNG)
+
+
+
+### About Page
+
+![header](static/images/about.PNG)
+
+
+
+### Sign Up Page
+
+![header](static/images/signup.PNG)
+
+
+
+
+### Log In Page
+
+![header](static/images/login.PNG)
+
+
+
+### Log Out Page
+
+![header](static/images/logout.PNG)
+
+
+
+### Post Detail Page
+
+![header](static/images/postdetail.PNG)
+
+
+
+
+### Post Item Page
+
+![header](static/images/postitem.PNG)
+
+
+
+### Delete Post Page
+
+![header](static/images/delete.PNG)
+
+
+
+### Admin Page
+
+![header](static/images/admin.PNG)
+
+
+
+### Features Not Implemented
