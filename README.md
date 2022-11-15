@@ -1,19 +1,26 @@
 # Luxury Rentals
 
-![header]
+![header](/media/responsive.JPG)
 
-Website description
+Luxury Rentals 
 
 Live link to [Luxury Rentals](https://luxuryrentals.herokuapp.com/)
 
 
 
 ## TABLE OF CONTENTS
-- [Luxury Rentals](#PICK-N-CHOOSE)
-* [Design Idea](#design-idea)
-    - [Colour Scheme](#colour-scheme)
+* [Market Research](#market-research)
+    - [Target Audience](#target-audience)
+    - [Strategy](#strategy)
+* [Agile](#agile)
+* [User Experience](#user-experience)
+    + [User Stories](#user-stories)
+* [Design Scheme](#design_scheme)
     - [Wireframes](#wireframes)
-
+    - [Colors](#colors)
+    - [Fonts](#fonts)
+    - [Images](#images)
+* [Data Scheme](#data_scheme)
 * [Features](#features)
     + [Header](#header)
     + [Footer](#footer)
@@ -27,19 +34,12 @@ Live link to [Luxury Rentals](https://luxuryrentals.herokuapp.com/)
     + [Delete Post Page](#delete-post-page)
     + [Admin Page](#admin-page)
     + [Features Not Implemented](#features-not-implemented)
-
-* [User Experience](#user-experience)
-    + [User Stories](#user-stories)    
-
-* [Agile](#agile)
-
-
-* [Data Model](#data-model)
+* [SEO](#seo)
+* [Stripe](#stripe)
 * [Testing](#testing)
     + [Manual Testing](#manual-testing)
     + [Validator Testing](#validator-testing)
-
-* [Deployment To Heroku](#deployment-to-heroku)
+* [Deployment](#deployment)
 * [Technology Used](#technology-used)
 * [Credits](#credits)
 
