@@ -473,3 +473,18 @@ a.category-badge > span.badge:hover {
   
     -webkit-text-stroke: 0.5px #ffffff;
 }
+
+@media (max-width:600px)  { 
+    #shobag{
+        font-size: 13px;
+    }
+
+    #usrer{
+        font-size: 13px;
+    }
+
+    #srchc{
+        font-size: 13px;
+    }    
+
+}

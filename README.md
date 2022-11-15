@@ -353,14 +353,14 @@ I have conducted thorough testing of the website, as well as some close friends 
 
 ## User Story Testing
 
-1. As a **user** I can **use the recover password options** so that **to recover my password in case i forget**
+1. As a user I can use the recover password options so that to recover my password in case i forget
 
     - The 'Forgot Password' option at the bottom of the login page was used to test this. A link is then sent to the user through email, so I tested this with an already-sent email to be sure the link was received.
 
     - The user must wait for the password reset link to be received before using it. Once it does, they are directed to a website where they must input their old password twice in order to reset it. The user is led to a confirmation page with a bootstrap toast displaying a success message after entering the new password. An error notice alerts the user so they can try again if the passwords do not match.
 
 
-2. As a **user** I can **easily register for an account on the website** so that **receive benefits of a logged in user**
+2. As a user I can easily register for an account on the website so that receive benefits of a logged in user
 
     - This was tested by registering a couple of user accounts and:
         - making sure they worked by logging out and back in.
@@ -380,17 +380,17 @@ I have conducted thorough testing of the website, as well as some close friends 
         - this included : Sort by name, sort by category and sort by price.
         - all of those options returned expected results
 
-5. As a **user** I can **select the start date of a rental package** so that **i know when to go pick up my car**
+5. As a user I can select the start date of a rental package so that i know when to go pick up my car
 
     - I clicked on the a car entry and was taken to the car details page.
     - There i was able to select the Start Date and the Amount of Days i would like to rent with no issues.
 
-6. As a **user** I can **see my order details** so that **i can verify the car i chose and the amount of days**
+6. As a user I can see my order details so that i can verify the car i chose and the amount of days
     - I selected a car to check out, I put in the number of days and the date and clicked check out.
     - After inputting my details , i clicked on secure checkout and was presented with my order details
     - I tried multiple times with various values trying to trick the form but it worked every time
 
-7. As a **user** I can **pay safely without having to worry about my details being stole** so that **i can shop with confidence**
+7. As a user I can pay safely without having to worry about my details being stole so that i can shop with confidence
     - If the user has an account, address details can be saved and updated/removed as needed. By adding and deleting addresses from the profile page, this was put to the test. In order to verify that the address was saved on the User's Profile page after checkout, it was also inserted and saved to the profile.
 
     - The project makes use of Stripe to handle payments, protecting customer payment information and preventing it from being saved in their user profile.
@@ -404,7 +404,7 @@ I have conducted thorough testing of the website, as well as some close friends 
 9. As a user I can buy rental packages without being logged in  so that I dont need to create an account before renting
     - Without being logged into an account, an order was placed. To make sure it matched what was put in the bag and afterwards checked out, it was tested by comparing the order confirmation, email confirmation, and the order within the order model. 
 
-10. As a **user** I can **easily view a list of cars ** so that **decide which one to rent**
+10. As a user I can easily view a list of cars ** so that **decide which one to rent
     - Once I clicked on the browse cars button I was presented with a well ordered list of cars with the right dimensions.
     - The cars are displayed using bootstrap cards and are very responsive due to their classes, which means the layout of the cards changes with screen size.
     - All images are displayed unless theres no image, at which point the site will display a default image pre-set in the code.
@@ -420,7 +420,7 @@ I have conducted thorough testing of the website, as well as some close friends 
 
     - By subscribing with a test email and logging into Mailchimp to view the contacts, the subscription was tested. After making sure the contact was present, I scanned the page to check if they had subscribed.
 
-13. As a **user** I can **add payment info easily when checking out** so that **i dont have to spend much time before buying**
+13. As a user I can add payment info easily when checking out so that i dont have to spend much time before buying
     - Submitted an order while simply filling out the checkout form's mandatory information. Both Stripe and the Database successfully processed the order, which was also recorded with a success Webhook message.
 
     - Attempted to place an order using the wrong card information. The wrong details are confirmed by an error message that displays beneath the card details form.
@@ -429,26 +429,26 @@ I have conducted thorough testing of the website, as well as some close friends 
 
     - Attempting to send a purchase order with a missing order form. All blank necessary fields notify the user that they must be filled out in order for the form to be finished and submitted.
 
-14. As a **user** I can **visit their facebook store page** so that **interact with the comunity closer**
+14. As a user I can visit their facebook store page so that interact with the comunity closer
     - I scrolled down to the footer where the facebook icon is located
     - Click on the Icon and was taken directly to their facebook page
     - It opened in a new window as expected and didnt close the previous one
 
-15. As a **user** I can **add rental cars into my shopping cart ** so that **I can see how much i am spending and the total cost**
+15. As a user I can add rental cars into my shopping cart  so that I can see how much i am spending and the total cost
     - I verified to make sure the right product was added before adding an item to the cart.
 
     - In order to make sure the quantity in the cart matched what was added, I raised the quantity before adding it.
 
     - When I tried to add 0 or a quantity greater than 99, the quantity box displayed an error notice informing me that the quantity could only be between 1 and 99. The buttons are deactivated if the user attempts to decrease to 0 or increment above 99 when using them instead of inputting the quantity. I was unable to add a quantity because it exceeded the permitted quantity limit.
 
-16. As a **user** I can **receive a confirmation email when registering** so that **click the confirmation link be sure i am registered**
+16. As a user I can receive a confirmation email when registering so that click the confirmation link be sure i am registered
     - By sending an order to an email address that can be verified, email confirmation was tried. The right order data and a contact email were included in an email confirmation that was sent in accordance with the template set up in the checkout app.
 
 
-17. As a **superuser** I can **add cars** so that **I can have more cars available to rent**
+17. As a superuser I can add cars so that I can have more cars available to rent
     - Both the Admin Panel and the project management page, which can be accessed by clicking on "My Account," can be used to add CARS. Both methods of adding cars were evaluated, and the cars that were tested could be seen both in the models as well as in the page.
 
-18. As a **superuser** I can **edit a car entry** so that **I can change its price, details, description**
+18. As a superuser I can edit a car entry so that I can change its price, details, description
     - You can edit an entry in two ways, one using the admin panel and another using the edit button which appears if youre logged in as superuser.
     - I checked if that edit button appeared otherwise and it didnt if youre not a superuser.
     - Clicked the edit button and was able to edit every single field , price description etc
@@ -458,18 +458,18 @@ I have conducted thorough testing of the website, as well as some close friends 
     - That can be done from the admin panel by clicking on their email and selecting the remove option.
     - This was indeed possible if you are logged into the admin panel and the user was deleted from the database.
 
-20. As a **superuser** I can **send emails to customers** so that **I can more easily market my available stock of cars or send them news about our store**
+20. As a superuser I can send emails to customers so that **I can more easily market my available stock of cars or send them news about our store
     - When a customer signs up for emails, their information is added to the company's Mailchimp contacts list, where they can later be removed.
 
     - This was checked by sending an email to subscribe and then verifying that it was received by checking the Mailchimp email list. In order to make sure it was simple to remove an email from the email list, I also looked at the unsubscribe functionality.
 
-21. As a **superuser** I can **add different categories of cars or change existing categories** so that **I am able to manage each entry properly**
+21. As a superuser I can add different categories of cars or change existing categories** so that I am able to manage each entry properly
     - I tested this by logging into the admin panel and clicking on the categories section and then click on the plus button.
     - I could indeed add a category if i provided its name and its friendly name
     - I tried adding an existing category and it wouldnt let me
 
 
-22. As a **superuser** I can **delete a car entry** so that **I can manage my website properly and remove old cars when they break or aren't available**
+22. As a superuser I can delete a car entry so that I can manage my website properly and remove old cars when they break or aren't available**
     - I tested this by clicking delete on a car entry, once i clicked i was taken to a delete confirmation page
     - If you confirm delete , it removes the car from the database and its no longer available in the "all cars" view
     - I tested to see if you could return to that old product but , i was greeted with a 404 error page.
@@ -617,3 +617,4 @@ DISABLE_COLLECTSTATIC = 1
 - Looka - Created custom logo
 - Previous projects done by Code Institute students - Also a big source of inspiration
 - Code Institute Tutor Team - They were a huge help and I couldn't complete this project without them.
+- Also big thanks to Kasia for always being helpful
