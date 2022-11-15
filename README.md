@@ -215,107 +215,152 @@ I used COOLORS to generate this:
 - The hero imagine isn't an image either its a video that loops of a supercar.
 
 
+# Data Scheme
+
+- Used DrawSQL to present my models
+
+![data](media/datamodel.png)
 
 
-
-### Wireframes
-
-
-
-
-## User Experience
-
-The site was designed to be easy and intuitive to use.
-A user for our site would have to be an adult that wishes to get rid of old items but he knows they still have value and doesn't want to throw them away. The user should also like to check whats already posted on the site by others, similar to a flea market.
-
-### User Stories
-- User Stories Implemented
-    - View post list: As a Site User I can view a list of posts so that I can select one to read
-    - Open a post: As a Site User I can click on a post so that I can check the item description
-    - View likes: As a Site User / Admin I can view the number of likes - on each post so that I can see which is the most popular or viral
-    - Account registration: As a Site User I can register an account so that I can post and like
-    - Like / Unlike: As a Site User I can like or unlike a post so that I can interact with the content
-    - Manage posts: As a Site Admin I can create, read, update and delete posts so that I can manage my sites content
-    - Create drafts: As a Site Admin I can create draft posts so that I can finish writing the content later
-    - View Address: As a Site User I can see the pick-up address on the main page without clicking on individual posts so that I don't waste any time
-    - Pagination: As a Site User I can view a paginated list of items so that I can select which one I want to view
-    - Phone Number: As a user I can click on each post and see the posters phone number so that I can contact them about the item
-    - Big picture: As a user I can click on each post and see a bigger picture of the item so that I can check its condition
-    - Post Item: As a user I can post an item on the website so that I can give it away
-    - Delete a post: As a user I can delete a post I have made so that I can remove it when the item has been given away
-
-
-
-- User Stories not yet implemented
-
-    - Search Bar: As a user I can click on the searchbar and type the title of the post I'm looking for so that I can find what I'm interested in.
-
-        - This was left out due to time constraints, however I will be adding this the next time I have some free time as its a core functionality of my site.
-
-
-    - Comment on a post: As a Site User I can leave comments on a post so that I can be involved in the conversation
-
-        - This wasn't implemented on purpose because I intended the website communication to be done via phone, that's why the phone number is provided by the poster.
-
-    - Approve comments: As a Site Admin I can approve or disapprove comments so that I can filter out objectionable comments
-
-        - Same reason as the "Comment on a post" story.
-
-## Agile
-
-In order to complete this project I have used the Agile Methodology.
-This involves breaking down the project into smaller tasks called User Stories. These user stories were added using githubs Issues functionality.
-Each user story was made into an issue and added to the projects kanban board. After each user story was coded into the websites functionality I would move the issue from "To Do" Column into "In Progress" and eventually into "Done" column depending what stage of development it was.
-
-- You can see the live kanban board with all the user stories by [clicking here.](https://github.com/users/RaoulRV/projects/2/views/1)
-
-![header](static/images/kanban.PNG)
-
-## Data Model
-
-I created a diagram in order to help me figure out how my model will look like. Once the diagram was completed I went ahead and created a custom model named Post.
-
-![header](static/images/postmodel.PNG)
-
-
-## Testing
+# Testing
 
 I have conducted thorough testing of the website, as well as some close friends who I have instructed to test the site.
 
-I have also included these results separately [right here](https://github.com/RaoulRV/picknch/blob/main/static/testing.md)
+## Manual Testing
+
+## User Story Testing
+
+1. As a **user** I can **use the recover password options** so that **to recover my password in case i forget**
+
+    - The 'Forgot Password' option at the bottom of the login page was used to test this. A link is then sent to the user through email, so I tested this with an already-sent email to be sure the link was received.
+
+    - The user must wait for the password reset link to be received before using it. Once it does, they are directed to a website where they must input their old password twice in order to reset it. The user is led to a confirmation page with a bootstrap toast displaying a success message after entering the new password. An error notice alerts the user so they can try again if the passwords do not match.
+
+
+2. As a **user** I can **easily register for an account on the website** so that **receive benefits of a logged in user**
+
+    - This was tested by registering a couple of user accounts and:
+        - making sure they worked by logging out and back in.
+        - clicking the confirmation link in the email
+        - scanning for verified email addresses in the admin panel.
+        - using an already-existing email address to attempt to create an account
+
+    - I also added an address to my profile and made an attempt to complete a checkout to test the information. The address saved in the profile was automatically filled up on the checkout page as a result. To further test this, I placed an order while making sure the user's profile address was saved and the box to save details to the profile was checked.
+
+ 3. As a user I can search by using a simple searchbar so that i can find exactly the car im looking to rent
+    - I tested this by searching using the search bar in the header and also by searching through the category links
+    - The number showed matched the number of searches on each page, and it can be found at the top left of the page along with the search keyword.
+
+4. As a user I can sort cars by specific category easily so that i can choose which type of car i want
+
+    - I went to the all car view and tested every single sorting option in the "sort by" section.
+        - this included : Sort by name, sort by category and sort by price.
+        - all of those options returned expected results
+
+5. As a **user** I can **select the start date of a rental package** so that **i know when to go pick up my car**
+
+    - I clicked on the a car entry and was taken to the car details page.
+    - There i was able to select the Start Date and the Amount of Days i would like to rent with no issues.
+
+6. As a **user** I can **see my order details** so that **i can verify the car i chose and the amount of days**
+    - I selected a car to check out, I put in the number of days and the date and clicked check out.
+    - After inputting my details , i clicked on secure checkout and was presented with my order details
+    - I tried multiple times with various values trying to trick the form but it worked every time
+
+7. As a **user** I can **pay safely without having to worry about my details being stole** so that **i can shop with confidence**
+    - If the user has an account, address details can be saved and updated/removed as needed. By adding and deleting addresses from the profile page, this was put to the test. In order to verify that the address was saved on the User's Profile page after checkout, it was also inserted and saved to the profile.
+
+    - The project makes use of Stripe to handle payments, protecting customer payment information and preventing it from being saved in their user profile.
+
+8. As a user I can adjust the rental packages i saved in my cart so that i can remove cars or add more days to rent
+    - I added a car to my cart and then went to the shopping cart page
+    - Once on the page i was presented with the correct information as expected
+    - Once I tried adjusting the packages that i added to my cart , the update went through without any issue
+    - I tried multiple times to trick the system by refreshing the page etc.
+
+9. As a user I can buy rental packages without being logged in  so that I dont need to create an account before renting
+    - Without being logged into an account, an order was placed. To make sure it matched what was put in the bag and afterwards checked out, it was tested by comparing the order confirmation, email confirmation, and the order within the order model. 
+
+10. As a **user** I can **easily view a list of cars ** so that **decide which one to rent**
+    - Once I clicked on the browse cars button I was presented with a well ordered list of cars with the right dimensions.
+    - The cars are displayed using bootstrap cards and are very responsive due to their classes, which means the layout of the cards changes with screen size.
+    - All images are displayed unless theres no image, at which point the site will display a default image pre-set in the code.
+
+11. As a user I can click on a specific car  so that see relevant information about its caracteristics
+    - I clicked on a card with the picture of a car, it took me to the car details page
+    - On the page it shows specific details related to that car in particular
+    - These details included horse power, speed, msrp etc.
+    - I checked different cars to see if any description is the same and all of them were different
+
+12. As a user I can sign up for the newsletter so that i can receive the latest updates
+    - The user can subscribe by providing their email and clicking submit in the footer. An error warning shows below the email box if there is a problem with the email. If successful, a success message is displayed instead.
+
+    - By subscribing with a test email and logging into Mailchimp to view the contacts, the subscription was tested. After making sure the contact was present, I scanned the page to check if they had subscribed.
+
+13. As a **user** I can **add payment info easily when checking out** so that **i dont have to spend much time before buying**
+    - Submitted an order while simply filling out the checkout form's mandatory information. Both Stripe and the Database successfully processed the order, which was also recorded with a success Webhook message.
+
+    - Attempted to place an order using the wrong card information. The wrong details are confirmed by an error message that displays beneath the card details form.
+
+    - Tried to place an order with a card that has expired. The card has expired, according to an error message that displays beneath the card details form.
+
+    - Attempting to send a purchase order with a missing order form. All blank necessary fields notify the user that they must be filled out in order for the form to be finished and submitted.
+
+14. As a **user** I can **visit their facebook store page** so that **interact with the comunity closer**
+    - I scrolled down to the footer where the facebook icon is located
+    - Click on the Icon and was taken directly to their facebook page
+    - It opened in a new window as expected and didnt close the previous one
+
+15. As a **user** I can **add rental cars into my shopping cart ** so that **I can see how much i am spending and the total cost**
+    - I verified to make sure the right product was added before adding an item to the cart.
+
+    - In order to make sure the quantity in the cart matched what was added, I raised the quantity before adding it.
+
+    - When I tried to add 0 or a quantity greater than 99, the quantity box displayed an error notice informing me that the quantity could only be between 1 and 99. The buttons are deactivated if the user attempts to decrease to 0 or increment above 99 when using them instead of inputting the quantity. I was unable to add a quantity because it exceeded the permitted quantity limit.
+
+16. As a **user** I can **receive a confirmation email when registering** so that **click the confirmation link be sure i am registered**
+    - By sending an order to an email address that can be verified, email confirmation was tried. The right order data and a contact email were included in an email confirmation that was sent in accordance with the template set up in the checkout app.
+
+
+17. As a **superuser** I can **add cars** so that **I can have more cars available to rent**
+    - Both the Admin Panel and the project management page, which can be accessed by clicking on "My Account," can be used to add CARS. Both methods of adding cars were evaluated, and the cars that were tested could be seen both in the models as well as in the page.
+
+18. As a **superuser** I can **edit a car entry** so that **I can change its price, details, description**
+    - You can edit an entry in two ways, one using the admin panel and another using the edit button which appears if youre logged in as superuser.
+    - I checked if that edit button appeared otherwise and it didnt if youre not a superuser.
+    - Clicked the edit button and was able to edit every single field , price description etc
+    - Also checked the admin panel for editing and it was the same situation everything worked without issue
+
+19. As a superuser I can change a normal users permisions so that I can stop a user from using my website if needed
+    - That can be done from the admin panel by clicking on their email and selecting the remove option.
+    - This was indeed possible if you are logged into the admin panel and the user was deleted from the database.
+
+20. As a **superuser** I can **send emails to customers** so that **I can more easily market my available stock of cars or send them news about our store**
+    - When a customer signs up for emails, their information is added to the company's Mailchimp contacts list, where they can later be removed.
+
+    - This was checked by sending an email to subscribe and then verifying that it was received by checking the Mailchimp email list. In order to make sure it was simple to remove an email from the email list, I also looked at the unsubscribe functionality.
+
+21. As a **superuser** I can **add different categories of cars or change existing categories** so that **I am able to manage each entry properly**
+    - I tested this by logging into the admin panel and clicking on the categories section and then click on the plus button.
+    - I could indeed add a category if i provided its name and its friendly name
+    - I tried adding an existing category and it wouldnt let me
+
+
+22. As a **superuser** I can **delete a car entry** so that **I can manage my website properly and remove old cars when they break or aren't available**
+    - I tested this by clicking delete on a car entry, once i clicked i was taken to a delete confirmation page
+    - If you confirm delete , it removes the car from the database and its no longer available in the "all cars" view
+    - I tested to see if you could return to that old product but , i was greeted with a 404 error page.
 
 
 
-
-## User Story testing
-
-Issue No. | Title | Acceptance criteria | Testing carried out
-----------|-------|---------------------|-------------------------
-#01 | Manage posts | Admin can create, update or remove posts | Ensured that the admin user has full functionality of the create/delete/edit buttons by creating and deleting posts multiple times
-#02 | Account registration | Easy registration process and login/logout process | Manually tested the registration form several times to ensure it works properly as well as logged in and logged out many times
-#03|  Create post | The registered users can create posts pending approval from admin user | Ensure the creating, editing, viewing and deleting post is appropriately processed and that the procedures are straight forward. Restrict the editing and deleting post process to user's own entry only except for superusers
-#04 | Create Drafts | Admin can create drafts that dont appear on the home page | Manually tested the draft dropdown menu and posted multiple drafts , also made sure they are not appearing outside of the django admin page.
-#05 | Site pagination | User can select each item to view and change pages | Created multiple user profiles and multiple posts in order to check if everything works, also clicked the "Next" button to make sure it goes to next page
-#06 | View Address | User can see posters address on main page | Made multiple posts and logged out to ensure I can still see the address for each post
-#07 | View post list | All site visitor users can view the post list | Making sure every single post is visible on the home page to every user regardless if hes logged in or not, also making sure posts with draft status aren't visible. 
-#08 | Open a post | Every user can open an individual post and view the contents inside but not interact with the post | Ensured the post details are available to everyone that clicks on the individual post, tested the link that opens post and it never failed, also made sure non-authenticated users cannot interact with the post at all
-#09 | Phone Number | Every user can click on post details and see posters phone number | Created multiple user profiles and multiple posts where I added my number then logged out to make sure any non-authenticated or authenticated user can see the phone number
-#10 | Big picture | A good sized picture of the item visible in post details | Manually added multiple posts and uploaded many different images to make sure they are properly displayed in the post details page, also checked if they are responsive
-#11 | Delete a post | Authenticated user can delete his own posts but no one else's | Manually created multiple users and made a single post for each, then i logged in to different accounts to make sure a user can only delete his own post
-#12 | Like/Unlike | Likes are visible to everyone but only registered users can interact with the button | Made sure I cannot use the like button while logged out, tested if it worked while i was logged in and checked to see if I can remove a like aswell as add a like to a post
-#13 | View Likes | Likes properly saved and displayed on the homepage/post details | Liked and unliked manually on different user profiles and refreshed many times to see if they displayed properly on both pages
-#14 | Searchbar | Not implemented | No tests
-#15 | Comment | Not implemented | No tests
-#16 | Approve Comments| Not implemented | No tests
-
-## Manual Testing 
+ 
 
 | Feature| Acceptance Criteria | Tests Carried out | Result |  
 | --- | --- | --- | --- | 
-| Admin CRUD | Admin account can create/update/delete posts | Created admin account, logged in and clicked every button for create,update or delete| Pass |
+| Admin CRUD | Admin account can create/update/delete any car entry | Created admin account, logged in and clicked every button for create,update or delete| Pass |
 | Admin restricted access | Access to admin page is not available to normal users | Created a normal user and attempted to log into the admin page | Pass |
-| Non Authenticated user/like  | Like button is visible but not activated/interactable | Logged out and refreshed the page to test if I can use the like button | Pass |  
-| Non Authenticated user/create  | Post Item option is not visible if you're logged out|Logged out and refreshed the page many times, clicked on different pages of the website to check if Post Item is visible| Pass | 
+| Non Authenticated check profile/ garage  | My garage option isn't visible | Logged out and refreshed the page to test if I can still go into my garage | Pass |  
+| Non Authenticated user/ product management  | Product management is not available if logged out|Logged out and refreshed the page many times, clicked on different pages of the website to check if the product management page was visible| Pass | 
 | Registration/ left blank |A message appearing that says "fill out this field"| Attempted to create an account with fields left blank or adding a space and then clicking sign up| Pass | 
 | Registration/ bad email| A message appearing that instructs you about email address format| Tried creating an account by using random letters and numbers, also by not finishing the address after "@"| Pass | 
 | Registration/ Common Password |A message appearing that instructs you the password is too common| Added a password that was very simple and easy to guess such as "password"| Pass | 
@@ -323,7 +368,7 @@ Issue No. | Title | Acceptance criteria | Testing carried out
 | Login/ Blank Field | A message instructing you to fill out this field|Attempted to log in without filling up the username field | Pass | 
 |Login/ Incorrect Username|A message that says "username or password you specified are not correct"|Tried logging in with random letters and numbers in the username field| Pass |
 |Login/ Incorrect Password| A message that says "username or password you specified are not correct"|Tried logging in with random letters and numbers in the password field| Pass |
-|Logged in/ like  | Like button is visible and active| Created a new user, logged in and clicked on the like button to see if I can interact with it| Pass | 
+|Logged in/ save details  | Like button is visible and active| Created a new user, logged in and clicked on the like button to see if I can interact with it| Pass | 
 |Logged in/ Post Item  |Post Item button is visible in navigation bar|Created a new user and logged in, checked in the top left to see if Post Item was there, also clicked on it| Pass | 
 |Post Item/ no image |The placeholder image should take its place| Created a new account and logged in, created a new post but didn't upload a picture and refreshed to check the homepage | Pass |
 |Post Item/ Blank Fields |Not allowed to post if required fields are empty| Logged in and pressed on Post Item button, left every field empty and pressed on Post| Pass |
@@ -350,30 +395,6 @@ I also ran all of the python code through Pep8 validator and returned no errors:
 ![header](static/images/pepmodels.PNG)
 ![header](static/images/pepviews.PNG)
 
-## Deployment To Heroku
-
-I've used Heroku to host my website and in the following steps I will be describing how to deploy your project to Heroku as well;
-
-- 1. Access https://www.heroku.com
-- 2. Create an account and log in.
-- 3. You will be directed to your dashboard once logged in.
-- 4. Click on the button called "New" in the top right corner of the screen.
-- 5. Click on Create new app from the drop down menu.
-- 6. Choose an App Name and choose a region that's closest to your location, then click Create app.
-- 7. Click on Settings and then click on "Config Vars"
-- 8. After clicking on "Reveal Config Vars" please copy the following configuration:
-    - CLOUDINARY_URL : < your cloudinary id goes here >
-    - DATABASE_URL : < your postgres database key goes here>
-    - SECRET_KEY = < the secret key you add her will need to be added in the settings.py file as well>
-    - PORT : 8000
-    - DISABLE_COLLECTSTATIC = 1 (remove this before final deployment)
-- 9. In the "Buildpacks" field, click on the Add buildpack button.
-- 10. Choose /herokupython and then save.
-- 11. Click on the deploy tab at the top of the page.
-- 12. In the deployment method choose github and then log in with your github account.
-- 13. Choose which repository you want to deploy.
-- 14. Scroll down and click the Deploy button.
-- 15. Done!
 
 ## Technology Used
 
@@ -399,81 +420,3 @@ I've used Heroku to host my website and in the following steps I will be describ
 - Looka - Created custom logo
 - Previous projects done by Code Institute students - Also a big source of inspiration
 - Code Institute Tutor Team - They were a huge help and I couldn't complete this project without them.
-
-
-
-
-### Header
-
-![header](static/images/header.PNG)
-
-
-
-![header](static/images/header2.PNG)
-
-
-
-
-### Footer
-
-![header](static/images/footer.PNG)
-
-
-
-### Home Page
-
-![header](static/images/homepage.PNG)
-
-
-
-### About Page
-
-![header](static/images/about.PNG)
-
-
-
-### Sign Up Page
-
-![header](static/images/signup.PNG)
-
-
-
-
-### Log In Page
-
-![header](static/images/login.PNG)
-
-
-
-### Log Out Page
-
-![header](static/images/logout.PNG)
-
-
-
-### Post Detail Page
-
-![header](static/images/postdetail.PNG)
-
-
-
-
-### Post Item Page
-
-![header](static/images/postitem.PNG)
-
-
-
-### Delete Post Page
-
-![header](static/images/delete.PNG)
-
-
-
-### Admin Page
-
-![header](static/images/admin.PNG)
-
-
-
-### Features Not Implemented
