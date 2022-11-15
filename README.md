@@ -352,7 +352,7 @@ I have conducted thorough testing of the website, as well as some close friends 
     - I tested to see if you could return to that old product but , i was greeted with a 404 error page.
 
 
-
+## Site Features Testing
  
 
 | Feature| Acceptance Criteria | Tests Carried out | Result |  
@@ -360,7 +360,7 @@ I have conducted thorough testing of the website, as well as some close friends 
 | Admin CRUD | Admin account can create/update/delete any car entry | Created admin account, logged in and clicked every button for create,update or delete| Pass |
 | Admin restricted access | Access to admin page is not available to normal users | Created a normal user and attempted to log into the admin page | Pass |
 | Non Authenticated check profile/ garage  | My garage option isn't visible | Logged out and refreshed the page to test if I can still go into my garage | Pass |  
-| Non Authenticated user/ product management  | Product management is not available if logged out|Logged out and refreshed the page many times, clicked on different pages of the website to check if the product management page was visible| Pass | 
+| Non Authenticated admin user/ product management  | Product management is not available if logged out|Logged out and refreshed the page many times, clicked on different pages of the website to check if the product management page was visible| Pass | 
 | Registration/ left blank |A message appearing that says "fill out this field"| Attempted to create an account with fields left blank or adding a space and then clicking sign up| Pass | 
 | Registration/ bad email| A message appearing that instructs you about email address format| Tried creating an account by using random letters and numbers, also by not finishing the address after "@"| Pass | 
 | Registration/ Common Password |A message appearing that instructs you the password is too common| Added a password that was very simple and easy to guess such as "password"| Pass | 
@@ -368,32 +368,37 @@ I have conducted thorough testing of the website, as well as some close friends 
 | Login/ Blank Field | A message instructing you to fill out this field|Attempted to log in without filling up the username field | Pass | 
 |Login/ Incorrect Username|A message that says "username or password you specified are not correct"|Tried logging in with random letters and numbers in the username field| Pass |
 |Login/ Incorrect Password| A message that says "username or password you specified are not correct"|Tried logging in with random letters and numbers in the password field| Pass |
-|Logged in/ save details  | Like button is visible and active| Created a new user, logged in and clicked on the like button to see if I can interact with it| Pass | 
-|Logged in/ Post Item  |Post Item button is visible in navigation bar|Created a new user and logged in, checked in the top left to see if Post Item was there, also clicked on it| Pass | 
-|Post Item/ no image |The placeholder image should take its place| Created a new account and logged in, created a new post but didn't upload a picture and refreshed to check the homepage | Pass |
-|Post Item/ Blank Fields |Not allowed to post if required fields are empty| Logged in and pressed on Post Item button, left every field empty and pressed on Post| Pass |
-| Delete/ not author |Button should say "Delete not available"|Logged in on admin, created a post and then logged out and into another account. Checked the post I created previously and the delete button| Pass |
-| Delete/ author |Delete button should be available and visible|Created a post on an account and then refreshed the homepage, clicked on the post and scrolled down to see the delete button| Pass | 
-| Delete page|Page should pop up asking if you're sure you want to delete|Clicked on my own post, scrolled down and clicked the delete button| Pass |
+|Logged in/ save details  | The save details tickbox is available and works | Created a new user, logged in and clicked on the checkbox after inputting my details | Pass | 
+|Logged in/ billing details saved  |billing details saved from previous purchases |Created a new user and logged in, made a purchase and saved the details, added another car to my cart and when i checked out, details were saved| Pass | 
+|Post Car Entry/ no image |The placeholder image should take its place| Created a new account and logged in, created a new post but didn't upload a picture and refreshed to check the homepage | Pass |
+|Post Car Entry/ Blank Fields |Not allowed to post if required fields are empty| Logged in as admin and left every field empty and pressed on submit | Pass |
+| Delete car entry/ not admin |Button shouldn't be visible |Logged in on admin, noticed the delete button is visible then logged into a normal user but the button wasnt visible| Pass |
+| Subscribe mailchimp |Submit button should work after you add ur email|Added email in the footer form and clicked submit, also added a bad email and got an error | Pass | 
+| Delete car entry page|Page should pop up asking if you're sure you want to delete|Clicked on a car entry, was taken to details page and clicked on delete, it took me to a new page| Pass |
 |Message/ login | Message appears confirming successful login |Logged in on an account| Pass |
 |Logout Page |Page pops up asking the user to confirm logout| Clicked on log out button| Pass |
 |Message/ logout |Message appears confirming successful logout|Clicked on the log out button and then again on log out| Pass |
-|Message/ Post Item|Message appears confirming your successful post| Clicked on post item and filled out the form, then clicked on post| Pass |
-|Pagination|Next button appears on the bottom of the page and its clickable|Scrolled down and clicked on next button| Pass |
+|Message/ Admin Post Product|Message appears confirming your successful post| Product management > filled out the form and pressed submit, message appeared | Pass |
+|Search bar |Searchbar should return a car related to your search|Searched for the word ferrari and it returned ferrari cars| Pass |
+|Category dropdown menu|A menu should drop down revealing the sort options | Clicked on the drop down and the sort by options were revelead | Pass |
+|Secure Checkout |Adding bad credit card information should return an error| Added 0000 in all fields and the error message appeared| Pass |
+|Forgot Password |Clicking on forgot password in the login should take you to a password reset page|Clicked on forgot password and it took me to a password reset page| Pass |
+|Admin / Edit |The edit option should be visible if youre an admin|Logged in as an admin and the option is visible and clickable| Pass |
 |Footer Socials|Social icons appear in the footer and open their pages in a new tab| Clicked on the social icons on the bottom of the page| Pass |
 
 ## Validator Testing
 
 ### CSS Validator
 I ran the CSS code through W3C Validator and returned no errors:
-![header](static/images/cssvalidator.PNG)
+![header](media/cssvalidator.JPG)
 ### HTML Validator
 I ran the entire website through HTML Validator as well and returned no errors:
-![header](static/images/htmlvalidator.PNG)
+![header](media/htmlvalidator.JPG)
+###
+I also used Lighthouse on most pages and they were all good scores, Accesibility is barely not in the green because of stylistic choices
+![header](media/lighthouse.JPG)
 ### Pep8 Validator
-I also ran all of the python code through Pep8 validator and returned no errors:
-![header](static/images/pepmodels.PNG)
-![header](static/images/pepviews.PNG)
+#### I used the "black" feature to check python code in most pages and it returned no error.
 
 
 ## Technology Used
