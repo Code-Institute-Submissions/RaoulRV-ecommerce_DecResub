@@ -6,37 +6,37 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('products', '0001_initial'),
+        ("products", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterModelOptions(
-            name='category',
-            options={'verbose_name_plural': 'Categories'},
+            name="category",
+            options={"verbose_name_plural": "Categories"},
         ),
         migrations.AddField(
-            model_name='product',
-            name='brand',
+            model_name="product",
+            name="brand",
             field=models.CharField(blank=True, max_length=254, null=True),
         ),
         migrations.AddField(
-            model_name='product',
-            name='horse_power',
+            model_name="product",
+            name="horse_power",
             field=models.IntegerField(blank=True, null=True),
         ),
         migrations.AddField(
-            model_name='product',
-            name='msrp',
+            model_name="product",
+            name="msrp",
             field=models.IntegerField(blank=True, null=True),
         ),
         migrations.AddField(
-            model_name='product',
-            name='speed',
+            model_name="product",
+            name="speed",
             field=models.IntegerField(blank=True, null=True),
         ),
         migrations.AlterField(
-            model_name='product',
-            name='price',
+            model_name="product",
+            name="price",
             field=models.DecimalField(decimal_places=3, max_digits=7),
         ),
     ]
