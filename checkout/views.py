@@ -5,7 +5,7 @@ from django.conf import settings
 
 from .forms import OrderForm
 from .models import Order, OrderLineItem
-from products.models import Product
+from products.models import Carlist
 from profiles.forms import UserProfileForm
 from profiles.models import UserProfile
 from bag.contexts import bag_contents
@@ -64,7 +64,7 @@ def checkout(request):
             order.save()
             for item_id, item_data in bag.items():
                 try:
-                    product = Product.objects.get(id=item_id)
+                    product = Carlist.objects.get(id=item_id)
                     if isinstance(item_data, int):
                         order_line_item = OrderLineItem(
                             order=order,
@@ -81,7 +81,7 @@ def checkout(request):
                                 product_size=size,
                             )
                             order_line_item.save()
-                except Product.DoesNotExist:
+                except Carlist.DoesNotExist:
                     messages.error(
                         request,
                         (

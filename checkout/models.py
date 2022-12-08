@@ -6,7 +6,7 @@ from django.conf import settings
 
 from django_countries.fields import CountryField
 
-from products.models import Product
+from products.models import Carlist
 from profiles.models import UserProfile
 
 
@@ -77,7 +77,7 @@ class OrderLineItem(models.Model):
         related_name="lineitems",
     )
     product = models.ForeignKey(
-        Product, null=False, blank=False, on_delete=models.CASCADE
+        Carlist, null=False, blank=False, on_delete=models.CASCADE
     )
     quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(
