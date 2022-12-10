@@ -30,8 +30,8 @@
                         <div class="sort-select-wrapper w-50">
                             <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="priceperday_asc" {% if current_sorting == 'priceperday_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="priceperday_desc" {% if current_sorting == 'priceperday_desc' %}selected{% endif %}>Price (high to low)</option>
                                 <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
                                 <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
                                 <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
@@ -69,7 +69,7 @@
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.price }} / day</p>
+                                            <p class="lead mb-0 text-left font-weight-bold">${{ product.priceperday }} / day</p>
                                             <p class="small mt-1 mb-0">
                                                 <a class="text-muted">
                                                     <p>Retail Price: ${{ product.msrp }}</p>
