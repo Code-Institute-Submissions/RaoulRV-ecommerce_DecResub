@@ -63,9 +63,14 @@ def product_detail(request, product_id):
     """A view to show individual product details"""
 
     product = get_object_or_404(Carlist, pk=product_id)
+    reviews = Reviewcar.objects.filter(
+        product_id=product.id, status=True).order_by('-created_on')
+    totalreviews = reviews.count()
 
     context = {
         "product": product,
+        'reviews': reviews,
+        'totalreviews': totalreviews,
     }
 
     return render(request, "products/product_detail.html", context)
