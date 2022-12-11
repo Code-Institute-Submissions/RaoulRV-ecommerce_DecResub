@@ -123,6 +123,39 @@
             </div>
         </div>
     </div>
+
+    <hr class="w-50 mb-5">
+    <div class="row offset-1 review-section">
+        <div class="col-md-6 mt-2">
+            <h4>You drove this car? Leave a Review :)</h4>
+            {% if user.is_authenticated %}
+            <form action="{% url 'submit_review' product.id %}" method="POST">
+                {% csrf_token %}
+                <div>
+                    <label for="rate">Rate your experience!</label>
+                    <br>
+                    <div class="rate">
+                        <input type="radio" name="rating" id="rating5" value="5" required checked="checked"><label for="rating5" title="5"></label>
+                        <input type="radio" name="rating" id="rating4" value="4" required><label for="rating8" title="4"></label>
+                        <input type="radio" name="rating" id="rating3" value="3" required><label for="rating6" title="3"></label>
+                        <input type="radio" name="rating" id="rating2" value="2" required><label for="rating4" title="2"></label>
+                        <input type="radio" name="rating" id="rating1" value="1" required><label for="rating2" title="1"></label>
+                    </div>
+                </div>
+                <div>
+                    Comments:
+                    <textarea name="review" id="review" class="form-control review-box" cols="10" rows="5" required></textarea>
+                </div>
+                <input type="submit" value="Submit Review" class="btn submit-review">
+            </form>
+            {% else %}
+            <div class="font-italic">
+                Only logged in users can leave reviews!
+                <a href="{% url 'account_login' %}" class="icon">Login</a>
+            </div>
+            {% endif %}
+        </div>
+
 {% endblock %}
 
 {% block postloadjs %}

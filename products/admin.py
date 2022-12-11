@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Carlist, Category
+from .models import Carlist, Category, Reviewcar
 
 # Register your models here.
 
@@ -24,5 +24,17 @@ class CategoryAdmin(admin.ModelAdmin):
     )
 
 
+class CarReviewAdmin(admin.ModelAdmin):
+    list_display = (
+        'car',
+        'user',
+        'reviewtitle',
+        'reviewtext',
+        'status',
+        'stars',
+    )
+
+
 admin.site.register(Carlist, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
+admin.site.register(Reviewcar, CarReviewAdmin)

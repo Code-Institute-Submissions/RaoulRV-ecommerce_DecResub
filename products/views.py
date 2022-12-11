@@ -3,8 +3,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Carlist, Category
-from .forms import ProductForm
+from .models import Carlist, Category, Reviewcar
+from .forms import ProductForm, CarReviewForm
 
 # Create your views here.
 
@@ -141,3 +141,30 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, "Product deleted!")
     return redirect(reverse("products"))
+
+
+def submit_review(request, product_id):
+    product = get_object_or_404(Carlist, pk=product_id)
+    if request.method == 'POST':
+        form = CarReviewForm(request.POST)
+        if form.is_valid():
+            data = Reviewcar()
+            data.stars = form.cleaned_data['stars']
+            data.reviewtitle = form.cleaned_data['reviewtitle']
+            data.reviewtext = form.cleaned_data['reviewtext']
+            data.product = product
+            data.user_id = request.user.id
+            data.save()
+            messages.success(
+                request, 'Your review was successfully submitted!')
+            return redirect(reverse('product_details', args=[product.id]))
+        else:
+            messages.error(
+                request, "There was an error submitting this review!")
+            return redirect(reverse('product_details', args=[product.id]))
+    else:
+        form = CarReviewForm()
+
+    template = 'products/product_details.html'
+
+    return render(request, template)
