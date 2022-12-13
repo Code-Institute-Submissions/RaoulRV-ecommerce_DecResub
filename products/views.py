@@ -64,7 +64,7 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Carlist, pk=product_id)
     reviews = Reviewcar.objects.filter(
-        product_id=product.id, status=True).order_by('-created_on')
+        car_id=product.id, status=True).order_by('-created_at')
     totalreviews = reviews.count()
 
     context = {
@@ -157,19 +157,20 @@ def submit_review(request, product_id):
             data.stars = form.cleaned_data['stars']
             data.reviewtitle = form.cleaned_data['reviewtitle']
             data.reviewtext = form.cleaned_data['reviewtext']
-            data.product = product
+            data.car = product
             data.user_id = request.user.id
             data.save()
             messages.success(
                 request, 'Your review was successfully submitted!')
-            return redirect(reverse('product_details', args=[product.id]))
+            return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(
-                request, "There was an error submitting this review!")
-            return redirect(reverse('product_details', args=[product.id]))
+                request, "There was an error when submitting this review!")
+            return redirect(reverse('product_detail', args=[product.id]))
+
     else:
         form = CarReviewForm()
 
-    template = 'products/product_details.html'
+    template = 'products/product_detail.html'
 
     return render(request, template)
