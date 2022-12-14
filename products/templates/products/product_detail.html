@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'products/css/product.css' %}">
+{% endblock %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -76,7 +81,7 @@
                                 <p><strong>Start Date:</strong></p>
                                 <input type="date" id="start" name="trip-start"
                                 value="2022-07-22"
-                                min="2022-01-01" max="2023-12-31">
+                                min="2022-01-01">
                             </div>                           
                             <div class="col-12">
                                 <p class="mt-3"><strong>Number of Days:</strong></p>
@@ -135,11 +140,16 @@
                     <label for="rate">Rate your experience!</label>
                     <br>
                     <div class="rate">
-                        <input type="radio" name="stars" id="stars5" value="5" required checked="checked"><label for="stars5" title="5"></label>
-                        <input type="radio" name="stars" id="stars4" value="4" required><label for="stars4" title="4"></label>
-                        <input type="radio" name="stars" id="stars3" value="3" required><label for="stars3" title="3"></label>
-                        <input type="radio" name="stars" id="stars2" value="2" required><label for="stars2" title="2"></label>
-                        <input type="radio" name="stars" id="stars1" value="1" required><label for="stars1" title="1"></label>
+                        <input type="radio" name="stars" id="stars10" value="5" required checked="checked"><label for="stars10" title="5"></label>
+                        <input type="radio" name="stars" id="stars9" value="4.5" required><label for="stars9" title="4.5" class="half"></label>
+                        <input type="radio" name="stars" id="stars8" value="4" required><label for="stars8" title="4"></label>
+                        <input type="radio" name="stars" id="stars7" value="3.5" required><label for="stars7" title="3.5" class="half"></label>
+                        <input type="radio" name="stars" id="stars6" value="3" required><label for="stars6" title="3"></label>
+                        <input type="radio" name="stars" id="stars5" value="2.5" required><label for="stars5" title="2.5" class="half"></label>
+                        <input type="radio" name="stars" id="stars4" value="2" required><label for="stars4" title="2"></label>
+                        <input type="radio" name="stars" id="stars3" value="1.5" required><label for="stars3" title="1.5" class="half"></label>
+                        <input type="radio" name="stars" id="stars2" value="1" required><label for="stars2" title="1"></label>
+                        <input type="radio" name="stars" id="stars1" value="0.5" required><label for="stars1" title="0.5" class="half"></label>
                     </div>
                 </div>
                 <div>
@@ -150,11 +160,12 @@
                     Comments:
                     <textarea name="reviewtext" id="reviewtext" class="form-control review-box" cols="10" rows="5" required></textarea>
                 </div>
-                <input type="submit" value="Submit Review" class="btn submit-review">
+                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Submit Review">
             </form>
             {% else %}
-            <div class="font-italic">
-                <a href="{% url 'account_login' %}" class="icon">Login to Review</a>
+            <div class="font-weight-bold">
+                <p>You must be logged in to leave reviews.</p>
+                <a href="{% url 'account_login' %}" class="icon">Login</a>
             </div>
             {% endif %}
         </div>
@@ -163,34 +174,36 @@
             <h4>This car currently has {{totalreviews}} review(s)!</h4>
             {% for reviewcar in reviews %}
             <article class="box mb-3">
+                <div id="cstreview">
                     <div class="icontext w-100">
                         <div class="text">
-                            <span class="date text-muted">{{reviewcar.created_at}}</span>
-                            <h6 class="mb-1">Posted by: {{ reviewcar.user }}</h6>
+                            <span class="date text-muted font-weight-bold">{{reviewcar.created_at}}</span>
+                            <h6 class="font-weight-bold mb-1">Posted by : {{ reviewcar.user }}</h6>
                             <div class="rating-star">
                                 <span>
-                                    <i class="fa fa-star{% if review.stars == 1 %}-o {% endif %}" aria-hidden="true"></i>
-                                    <i class="fa fa-star{% if review.stars == 2 %}-o {% endif %}" aria-hidden="true"></i>
-                                    <i class="fa fa-star{% if review.stars == 3 %}-o {% endif %}" aria-hidden="true"></i>
-                                    <i class="fa fa-star{% if review.stars == 4 %}-o {% endif %}" aria-hidden="true"></i>
-                                    <i class="fa fa-star{% if review.stars == 5 %}-o {% endif %}" aria-hidden="true"></i>
+                                    <i class="fa fa-star{% if reviewcar.stars == 0.5 %}-half-o{% elif reviewcar.stars < 1 %}-o {% endif %}" aria-hidden="true"></i>
+                                    <i class="fa fa-star{% if reviewcar.stars == 1.5 %}-half-o{% elif reviewcar.stars < 2 %}-o {% endif %}" aria-hidden="true"></i>
+                                    <i class="fa fa-star{% if reviewcar.stars == 2.5 %}-half-o{% elif reviewcar.stars < 3 %}-o {% endif %}" aria-hidden="true"></i>
+                                    <i class="fa fa-star{% if reviewcar.stars == 3.5 %}-half-o{% elif reviewcar.stars < 4 %}-o {% endif %}" aria-hidden="true"></i>
+                                    <i class="fa fa-star{% if reviewcar.stars == 4.5 %}-half-o{% elif reviewcar.stars < 5 %}-o {% endif %}" aria-hidden="true"></i>
                                 </span>
                             </div>
                         </div>
                     </div>
-                    <div class="mt-2">
+                    <div class="font-weight-bold mt-2" id="reviewtitlepost">
                         <p>
-                            Title: {{reviewcar.reviewtitle}}
+                            Review : {{reviewcar.reviewtitle}}
                         </p>
                     </div>
-                    <div class="mt-2">
+                    <div class="mt-2" id="reviewtextpost">
                         <p>
-                            Comments: {{reviewcar.reviewtext}}
+                            {{reviewcar.reviewtext}}
                         </p>
                     </div>
+                </div>
                 {% empty %}
-                    <div class="font-italic mt-2">
-                        Be the first one to review it!
+                    <div class="font-weight-bold mt-2">
+                        Be the first one to review it !
                     </div>
             </article>
             {% endfor %}
