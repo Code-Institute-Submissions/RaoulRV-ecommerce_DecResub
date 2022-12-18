@@ -79,8 +79,7 @@
                         <div class="form-row">
                             <div class="col-12">
                                 <p><strong>Start Date:</strong></p>
-                                <input type="date" id="start" name="trip-start"
-                                value="2022-07-22"
+                                <input type="date" id="start_date" name="start_date"
                                 min="2022-01-01">
                             </div>                           
                             <div class="col-12">
@@ -200,6 +199,11 @@
                             {{reviewcar.reviewtext}}
                         </p>
                     </div>
+                    {% if request.user == reviewcar.user or request.user.is_superuser %}
+                    <div class="col text-right del-product">
+                        <a class="text-danger" href="{% url 'remove_review' reviewcar.id %}">Remove</a>
+                    </div>
+                    {% endif %}
                 </div>
                 {% empty %}
                     <div class="font-weight-bold mt-2">

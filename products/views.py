@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.urls import reverse_lazy
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
@@ -171,6 +172,18 @@ def submit_review(request, product_id):
     else:
         form = CarReviewForm()
 
+    template = 'products/product_detail.html'
+
+    return render(request, template)
+
+
+@login_required
+def remove_review(request, reviewcar_id):
+
+    review = get_object_or_404(Reviewcar, pk=reviewcar_id)
+
+    review.delete()
+    messages.success(request, 'You have successfully removed the review!')
     template = 'products/product_detail.html'
 
     return render(request, template)
