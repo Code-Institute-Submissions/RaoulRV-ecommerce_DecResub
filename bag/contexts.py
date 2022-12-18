@@ -42,12 +42,15 @@ def bag_contents(request):
                     }
                 )
 
-    grand_total = total
+    maintenance = total * Decimal(settings.STANDARD_MAINTENANCE_PERCENTAGE / 100)
+
+    grand_total = maintenance + total
 
     context = {
         "bag_items": bag_items,
         "total": total,
         "product_count": product_count,
+        "maintenance": maintenance,
         "grand_total": grand_total,
         #"start_date": start_date,
         #"end_date": end_date,

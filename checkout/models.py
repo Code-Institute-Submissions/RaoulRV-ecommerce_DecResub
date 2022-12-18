@@ -32,6 +32,7 @@ class Order(models.Model):
     order_total = models.DecimalField(
         max_digits=15, decimal_places=0, null=False, default=0
     )
+    maintenance_cost = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(
         max_digits=15, decimal_places=0, null=False, default=0
     )
@@ -47,12 +48,13 @@ class Order(models.Model):
     def update_total(self):
         """
         Update grand total each time a line item is added,
-        accounting for delivery costs.
+        accounting for maintenance cost
         """
         self.order_total = (
             self.lineitems.aggregate(Sum("lineitem_total"))["lineitem_total__sum"] or 0
         )
-        self.grand_total = self.order_total
+        self.maintenance_cost = self.order_total * settings.STANDARD_MAINTENANCE_PERCENTAGE / 100
+        self.grand_total = self.order_total + self.maintenance_cost
         self.save()
 
     def save(self, *args, **kwargs):

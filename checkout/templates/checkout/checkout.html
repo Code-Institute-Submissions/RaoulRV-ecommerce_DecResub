@@ -60,11 +60,13 @@
                 <div class="row text-black text-right">
                     <div class="col-7 offset-2">
                         <p class="my-0">Order Total:</p>
+                        <p class="my-0">Daily Maintenance Cost:</p>
                         <p class="my-0">Grand Total:</p>
                     </div>
                     <div class="col-3">
-                        <p class="my-0">${{ total }}</p>
-                        <p class="my-0"><strong>${{ grand_total }}</strong></p>
+                        <p class="my-0">${{ total | floatformat:0}}</p>
+                        <p class="my-0">${{ maintenance | floatformat:0 }}</p>
+                        <p class="my-0"><strong>${{ grand_total | floatformat:0 }}</strong></p>
                     </div>
                 </div>
             </div>
