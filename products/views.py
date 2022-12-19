@@ -181,9 +181,9 @@ def submit_review(request, product_id):
 def remove_review(request, reviewcar_id):
 
     review = get_object_or_404(Reviewcar, pk=reviewcar_id)
+    product = review.car
 
     review.delete()
     messages.success(request, 'You have successfully removed the review!')
-    template = 'products/product_detail.html'
 
-    return render(request, template)
+    return redirect(reverse('product_detail', args=[product.id]))
