@@ -18,16 +18,11 @@ def add_to_bag(request, item_id):
     quantity = int(request.POST.get("quantity"))
     redirect_url = request.POST.get("redirect_url")
     bag = request.session.get("bag", {})
-    #start_date = request.POST.get("start_date")
-    # bag["start_date"] = start_date
-    # bag["end_date"] = start_date + str(timedelta(days=quantity))
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
-        #bag[item_id] = {'start_date': start_date}
         messages.success(request, f"Updated {product.name} quantity to {bag[item_id]}")
     else:
         bag[item_id] = quantity
-        #bag[item_id] = {'start_date': start_date}
         messages.success(request, f"Added {product.name} to your cart")
         
     request.session["bag"] = bag

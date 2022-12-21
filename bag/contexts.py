@@ -11,8 +11,6 @@ def bag_contents(request):
     total = 0
     product_count = 0
     bag = request.session.get("bag", {})
-    #start_date = bag.get("start_date")
-    #end_date = bag.get("end_date")
     for item_id, item_data in bag.items():
         if isinstance(item_data, int):
             product = get_object_or_404(Carlist, pk=item_id)
@@ -23,8 +21,6 @@ def bag_contents(request):
                     "item_id": item_id,
                     "quantity": item_data,
                     "product": product,
-                    #"start_date": start_date,
-                    #"end_date": end_date,
                 }
             )
         else:
@@ -37,8 +33,6 @@ def bag_contents(request):
                         "item_id": item_id,
                         "quantity": quantity,
                         "product": product,
-                        #"start_date": start_date,
-                        #"end_date": end_date,
                     }
                 )
 
@@ -52,8 +46,6 @@ def bag_contents(request):
         "product_count": product_count,
         "maintenance": maintenance,
         "grand_total": grand_total,
-        #"start_date": start_date,
-        #"end_date": end_date,
     }
 
     return context
