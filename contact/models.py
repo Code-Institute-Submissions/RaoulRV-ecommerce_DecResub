@@ -8,11 +8,11 @@ class ContactUs(models.Model):
     name = models.CharField(
         max_length=100
         )
+    message_subject = models.CharField(max_length=400)
     message = models.TextField()
     message_date = models.DateTimeField(
         auto_now_add=True
         )
-    message_subject = models.CharField(max_length=400)
     reply_sent = models.BooleanField(default=False)
 
     REGARDING_LIST = [

@@ -6,6 +6,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Carlist, Category, Reviewcar
 from .forms import ProductForm, CarReviewForm
+from datetime import date
 
 # Create your views here.
 
@@ -67,11 +68,12 @@ def product_detail(request, product_id):
     reviews = Reviewcar.objects.filter(
         car_id=product.id, status=True).order_by('-created_at')
     totalreviews = reviews.count()
-
+    current_date = date.today()
     context = {
         "product": product,
         'reviews': reviews,
         'totalreviews': totalreviews,
+        "current_date": current_date,
     }
 
     return render(request, "products/product_detail.html", context)

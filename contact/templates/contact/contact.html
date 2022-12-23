@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'contact/css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="contactuspage">
+    <div class="contact-form-wrapper d-flex justify-content-center">
+      <form action="{% url 'contact' %}" method="POST" class="contact-form">
+        {% csrf_token %}
+        <h5 class="title">CONTACT US</h5>
+        <p class="description">If you have any questions regarding our cars, booking dates, payment or any 
+          other form of support, the best way to get in touch is by messaging us below.
+
+        </p>
+        {{ form.as_p }}
+        <div class="submit-button-wrapper">
+          <input type="submit" value="Send">
+        </div>
+      </form>
+    </div>
+</div>
+
+{% endblock  %}
