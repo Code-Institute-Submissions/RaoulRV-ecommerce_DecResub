@@ -13,6 +13,7 @@ def submit_message(request):
             messages.success(
                 request,
                 "Thanks for getting in touch, we'll get back to you ASAP !")
+            return redirect(reverse('contact'))
 
         else:
             messages.error(
