@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="page-title">
+                    <strong>My Wishlist</strong>
+                </h2>
+                <hr class="w-50 mb-1">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="product-container col-10 offset-1">
+                <div class="row">
+                    {% for item in wishlist_cars %}
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 text-center product-card">
+                        <div class="card h-100 border-0">
+                            {% if item.image %}
+                            <a href="{% url 'product_detail' item.id %}">
+                                <img class="img-fluid item-img" src="{{ item.image.url }}"
+                                    alt="{{ item.name }}">
+                            </a>
+                            {% else %}
+                            <a href="{% url 'product_detail' item.id %}">
+                                <img class="img-fluid item-img" src="{{ MEDIA_URL }}noimage.png"
+                                    alt="{{ item.name }}">
+                            </a>
+                            {% endif %}
+
+                            <div class="card-body pb-0">
+                                <p class="mb-0 text-left"><strong>{{ item.name }}</strong></p>
+                            </div>
+                            <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <div class="row">
+                                    <div class="col">
+
+                                        <p class="mb-0 text-left"><strong>${{ item.priceperday }}</strong></p>
+
+                                        {% if item.category %}
+                                        <p class="small mt-1 mb-0">
+                                            <a class="text-muted"
+                                                href="{% url 'products' %}?category={{ item.category.name }}">
+                                                <i
+                                                    class="fa-solid fa-tags icon"></i>{{ item.category.friendly_name }}
+                                            </a>
+                                        </p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

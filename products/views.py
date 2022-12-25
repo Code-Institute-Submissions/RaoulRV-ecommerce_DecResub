@@ -7,6 +7,8 @@ from django.db.models.functions import Lower
 from .models import Carlist, Category, Reviewcar
 from .forms import ProductForm, CarReviewForm
 from datetime import date
+from wishlist.models import Wishlist
+from django.http import Http404
 
 # Create your views here.
 
@@ -69,7 +71,16 @@ def product_detail(request, product_id):
         car_id=product.id, status=True).order_by('-created_at')
     totalreviews = reviews.count()
     current_date = date.today()
+
+    try:
+        wishlist = get_object_or_404(Wishlist, user_name=request.user.id)
+    except Http404:
+        is_in_wishlist = False
+    else:
+        is_in_wishlist = bool(product in wishlist.wishlist_cars.all())
+
     context = {
+        "is_in_wishlist": is_in_wishlist,
         "product": product,
         'reviews': reviews,
         'totalreviews': totalreviews,

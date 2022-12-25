@@ -29,5 +29,6 @@ urlpatterns = [
     path("checkout/", include("checkout.urls")),
     path("profile/", include("profiles.urls")),
     path('contact/', submit_message, name='contact'),
+    path('wishlist/', include('wishlist.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 handler404 = "car_ecom.views.handler404"

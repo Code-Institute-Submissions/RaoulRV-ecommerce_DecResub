@@ -53,6 +53,14 @@
                         <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
                     </small>
                 {% endif %}
+                <div class="col text-left mt-3">
+                    {% if user.is_authenticated %}
+                            <a href="{% url 'add_to_wishlist' product.id %}" aria-label="add product to your favourites" class="text-danger ml-3 favourites">
+                                <p class="small mt-1 mb-0 text-muted">Add to Wishlist</p>
+                            </a>
+    
+                    {% endif %}
+                </div>
                 <p class="small mt-1 mb-0">
                     <a class="text-muted">
                         <p><strong>Horse Power : {{ product.horse_power }} </strong></p>
