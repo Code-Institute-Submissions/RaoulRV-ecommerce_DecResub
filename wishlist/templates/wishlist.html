@@ -4,21 +4,22 @@
 
 {% block content %}
 
+
+<div class="row">
+    <div class="col text-center mt-3">
+        <h2 id ="wishlisttitle" class="page-title">
+            <strong>My Wishlist</strong>
+        </h2>
+        <hr class="w-50 mb-3">
+    </div>
+</div>
 <div class="content">
     <div class="container-fluid">
-        <div class="row">
-            <div class="col text-center mt-3">
-                <h2 class="page-title">
-                    <strong>My Wishlist</strong>
-                </h2>
-                <hr class="w-50 mb-1">
-            </div>
-        </div>
         <div class="row mt-3">
             <div class="product-container col-10 offset-1">
                 <div class="row">
                     {% for item in wishlist_cars %}
-                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 text-center product-card">
+                    <div id="wishlistcard" class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-4 text-center product-card">
                         <div class="card h-100 border-0">
                             {% if item.image %}
                             <a href="{% url 'product_detail' item.id %}">
@@ -39,7 +40,7 @@
                                 <div class="row">
                                     <div class="col">
 
-                                        <p class="mb-0 text-left"><strong>${{ item.priceperday }}</strong></p>
+                                        <p class="mb-0 text-left"><strong>${{ item.priceperday }}/day</strong></p>
 
                                         {% if item.category %}
                                         <p class="small mt-1 mb-0">
@@ -51,6 +52,38 @@
                                         </p>
                                         {% endif %}
                                     </div>
+                                </div>
+                                <p class="small mt-1 mb-0">
+                                    <a class="text-muted">
+                                        <p><strong>Horse Power : {{ item.horse_power }} </strong></p>
+                                    </a>
+                                </p>
+                                <p class="small mt-1 mb-0">
+                                    <a class="text-muted">
+                                        <p><strong>Top Speed : {{ item.speed }} MPH </strong></p>
+                                    </a>
+                                </p>
+                                <div class="row">
+                                    <a id="wishlista" href="{% url 'remove_from_wishlist' item.id 'wishlist' %}">
+                                        <button class="btn btn-wishlist" id="wishlistbutton">
+                                            <svg width="56px" height="48px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M 0 0
+                                                    L 56 0
+                                                    L 40 48
+                                                    L 0 48" stroke="none">
+                                                </path>
+                                            </svg>
+                                            <div class="icon">
+                                                <i id="wishlishicon" class="fa-solid fa-heart-circle-minus"></i>
+                                            </div>
+                                            <div class="wishlistlabel">
+                
+                                                <span id="wishlistspan" class="label-text">
+                                                    Remove
+                                                </span>
+                                            </div>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

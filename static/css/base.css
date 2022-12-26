@@ -488,3 +488,87 @@ a.category-badge > span.badge:hover {
     }    
 
 }
+
+/* Wishlist button styling, some of it taken from codepen and converted from SCSS to CSS */
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+svg path {
+    fill: #bb5555;
+    transition: transform 200ms ease-in-out, opacity 200ms ease;
+
+}
+#wishlistbutton {
+    transform-style: preserve-3d;
+    transform: translateZ(0);
+    padding: 12px;
+    border-radius: 3px;
+    border: none;
+    background-color: transparent;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 200ms ease, padding-right 200ms ease-out box-shadow 200ms ease;
+    box-shadow: none;
+}
+#wishlistbutton:hover {
+    background-color: #d4af37;
+    padding-right: 32px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+#wishlistbutton svg path {
+    transform: translateX(-56px);
+
+}
+#wishlistbutton:hover svg path {
+    transform: translateX(0px);
+
+}
+#wishlistbutton #wishlistlabel {
+    transition: transform 200ms ease-out;
+}
+#wishlistbutton:hover #wishlistlabel {
+    transform: translateX(20px);
+}
+#wishlistbutton #wishlishicon {
+    transition: color 200ms ease;
+    position: relative;
+}
+#wishlistbutton:hover #wishlishicon {
+    color: white;
+}
+#wishlishicon {
+    float: left;
+    text-align: center;
+    width: 24px;
+    line-height: 24px;
+    margin-right: 12px;
+    color: #d4af37;
+}
+#wishlistlabel {
+    float: left;
+    line-height: 24px;
+    font-weight: bold;
+    margin-right: 12px;
+    color: #4a4a4a;
+}
+
+#wishlista:hover { text-decoration: none; }
+#wishlista:active { text-decoration: none; }
+
+#wishlistspan{
+    color:#bb5555;
+}
+
+#wishlisttitle{
+    padding-top: 200px;
+}
+
+#wishlistcard{
+    border: 4px ridge #d4af37;
+}
+
+

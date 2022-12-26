@@ -53,3 +53,23 @@ def add_to_wishlist(request, item_id):
             to your wishlist !')
 
     return redirect(reverse('product_detail', args=[product.id]))
+
+
+@login_required
+def remove_from_wishlist(request, item_id, redirect_from):
+
+    product = get_object_or_404(Carlist, pk=item_id)
+    wishlist = get_object_or_404(Wishlist, user_name=request.user.id)
+    if product in wishlist.wishlist_cars.all():
+        wishlist.wishlist_cars.remove(product)
+        messages.success(request, f'{product.name} has been removed \
+            from your wishlist !')
+    else:
+        messages.error(request, f'{product.name} is not in your wishlist !')
+
+    if redirect_from == 'wishlist':
+        redirect_url = reverse('wishlist')
+    else:
+        redirect_url = reverse('product_detail', args=[product.id])
+
+    return redirect(redirect_url)
