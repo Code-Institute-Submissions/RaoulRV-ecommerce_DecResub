@@ -17,6 +17,9 @@ class Category(models.Model):
 
 
 class Carlist(models.Model):
+    class Meta:
+        verbose_name_plural = "Car List"
+
     category = models.ForeignKey(
         "Category", null=True, blank=True, on_delete=models.SET_NULL
     )
@@ -38,6 +41,9 @@ class Carlist(models.Model):
 
 
 class Reviewcar(models.Model):
+    class Meta:
+        verbose_name_plural = "Car Reviews"
+
     car = models.ForeignKey(Carlist, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     reviewtext = models.TextField(max_length=800, blank=True)
@@ -50,5 +56,3 @@ class Reviewcar(models.Model):
 
     def __str__(self):
         return self.reviewtext
-
-

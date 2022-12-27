@@ -4,6 +4,10 @@ from django.db import models
 
 
 class ContactUs(models.Model):
+
+    class Meta:
+        verbose_name_plural = "Contact Us"
+
     email_address = models.EmailField()
     name = models.CharField(
         max_length=100
