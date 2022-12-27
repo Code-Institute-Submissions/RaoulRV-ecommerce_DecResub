@@ -126,7 +126,7 @@
                     <div class="form-row">
                         <div class="col-12">
                             <p><strong>Start Date:</strong></p>
-                            <input type="date" id="start_date" name="start_date" min="{{ current_date }}">
+                            <input type="date" id="myDateInput">
                         </div>
                         <div class="col-12">
                             <p class="mt-3"><strong>Number of Days:</strong></p>
@@ -283,3 +283,4 @@
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
+

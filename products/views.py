@@ -70,7 +70,6 @@ def product_detail(request, product_id):
     reviews = Reviewcar.objects.filter(
         car_id=product.id, status=True).order_by('-created_at')
     totalreviews = reviews.count()
-    current_date = date.today()
 
     try:
         wishlist = get_object_or_404(Wishlist, user_name=request.user.id)
@@ -84,7 +83,6 @@ def product_detail(request, product_id):
         "product": product,
         'reviews': reviews,
         'totalreviews': totalreviews,
-        "current_date": current_date,
     }
 
     return render(request, "products/product_detail.html", context)

@@ -187,6 +187,14 @@
          }(jQuery));
          var $mcj = jQuery.noConflict(true);
       </script>
+      <script>
+         // This piece of code was adapted from stackoverload
+         // Get the current date
+         var currentDate = new Date();
+       
+         // Set the minimum date to the current date
+         document.getElementById('myDateInput').min = currentDate.toISOString().split('T')[0];
+      </script>
       {% endblock %}
    </body>
 </html>
