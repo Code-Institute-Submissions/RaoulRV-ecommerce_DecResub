@@ -36,7 +36,8 @@ def bag_contents(request):
                     }
                 )
 
-    maintenance = total * Decimal(settings.STANDARD_MAINTENANCE_PERCENTAGE / 100)
+    maintenance = total * Decimal(
+        settings.STANDARD_MAINTENANCE_PERCENTAGE / 100)
 
     grand_total = maintenance + total
 

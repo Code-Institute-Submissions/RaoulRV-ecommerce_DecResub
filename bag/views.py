@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+from django.shortcuts import (
+    render, redirect, reverse, HttpResponse, get_object_or_404)
 from django.contrib import messages
 from datetime import date, timedelta
 from products.models import Carlist
@@ -20,11 +21,12 @@ def add_to_bag(request, item_id):
     bag = request.session.get("bag", {})
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
-        messages.success(request, f"Updated {product.name} quantity to {bag[item_id]}")
+        messages.success(
+            request, f"Updated {product.name} quantity to {bag[item_id]}")
     else:
         bag[item_id] = quantity
         messages.success(request, f"Added {product.name} to your cart")
-        
+
     request.session["bag"] = bag
     return redirect(redirect_url)
 
@@ -37,7 +39,8 @@ def adjust_bag(request, item_id):
 
     if quantity > 0:
         bag[item_id] = quantity
-        messages.success(request, f"Updated {product.name} quantity to {bag[item_id]}")
+        messages.success(
+            request, f"Updated {product.name} quantity to {bag[item_id]}")
     else:
         bag.pop(item_id)
         messages.success(request, f"Removed {product.name} from your cart")
