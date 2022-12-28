@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Carlist, Category, Reviewcar
+from .models import Carlist, Category, ReviewCar
 
 # Register your models here.
 
@@ -37,4 +37,4 @@ class CarReviewAdmin(admin.ModelAdmin):
 
 admin.site.register(Carlist, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(Reviewcar, CarReviewAdmin)
+admin.site.register(ReviewCar, CarReviewAdmin)

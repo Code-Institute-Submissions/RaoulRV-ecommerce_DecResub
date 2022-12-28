@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
-from .models import Carlist, Category, Reviewcar
+from .models import Carlist, Category, ReviewCar
 from .forms import ProductForm, CarReviewForm
 from datetime import date
 from wishlist.models import Wishlist
@@ -69,7 +69,7 @@ def product_detail(request, product_id):
     """A view to show individual product details"""
 
     product = get_object_or_404(Carlist, pk=product_id)
-    reviews = Reviewcar.objects.filter(
+    reviews = ReviewCar.objects.filter(
         car_id=product.id, status=True).order_by('-created_at')
     totalreviews = reviews.count()
 
@@ -167,7 +167,7 @@ def submit_review(request, product_id):
     if request.method == 'POST':
         form = CarReviewForm(request.POST)
         if form.is_valid():
-            data = Reviewcar()
+            data = ReviewCar()
             data.stars = form.cleaned_data['stars']
             data.reviewtitle = form.cleaned_data['reviewtitle']
             data.reviewtext = form.cleaned_data['reviewtext']
@@ -193,7 +193,7 @@ def submit_review(request, product_id):
 @login_required
 def remove_review(request, reviewcar_id):
 
-    review = get_object_or_404(Reviewcar, pk=reviewcar_id)
+    review = get_object_or_404(ReviewCar, pk=reviewcar_id)
     product = review.car
 
     review.delete()

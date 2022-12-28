@@ -1,6 +1,6 @@
 from django import forms
 from .widgets import CustomClearableFileInput
-from .models import Carlist, Category, Reviewcar
+from .models import Carlist, Category, ReviewCar
 
 
 class ProductForm(forms.ModelForm):
@@ -24,5 +24,5 @@ class ProductForm(forms.ModelForm):
 
 class CarReviewForm(forms.ModelForm):
     class Meta:
-        model = Reviewcar
+        model = ReviewCar
         fields = ['stars', 'reviewtitle', 'reviewtext']

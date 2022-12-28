@@ -40,7 +40,7 @@ class Carlist(models.Model):
         return self.name
 
 
-class Reviewcar(models.Model):
+class ReviewCar(models.Model):
     class Meta:
         verbose_name_plural = "Car Reviews"
 
