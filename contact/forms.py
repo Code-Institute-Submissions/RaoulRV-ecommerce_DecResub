@@ -1,6 +1,9 @@
 from django import forms
 from .models import ContactUs
 
+# took some inspiration here from another \
+# code-institute student https://github.com/sherryrich/gymbag
+
 
 class ContactUsForm(forms.ModelForm):
     class Meta:

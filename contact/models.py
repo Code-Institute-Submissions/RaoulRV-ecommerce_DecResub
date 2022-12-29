@@ -1,6 +1,8 @@
 from django.db import models
 
 # Create your models here.
+# took some inspiration here from another \
+# code-institute student https://github.com/sherryrich/gymbag
 
 
 class ContactUs(models.Model):

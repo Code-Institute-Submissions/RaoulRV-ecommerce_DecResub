@@ -8,6 +8,10 @@ from django.http import Http404
 
 # Create your views here.
 
+""" Some of this python code was adapted from \
+Very Academy https://www.youtube.com/veryacademy \
+Clay and Fire https://github.com/SamanthaBooth81/clay_and_fire"""
+
 
 @login_required
 def wishlist_view(request):

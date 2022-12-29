@@ -618,3 +618,150 @@ DISABLE_COLLECTSTATIC = 1
 - Previous projects done by Code Institute students - Also a big source of inspiration
 - Code Institute Tutor Team - They were a huge help and I couldn't complete this project without them.
 - Also big thanks to Kasia for always being helpful
+
+# Changelog (for resubmission)
+After receiving the feedback I have made the following changes : 
+
+## User Registration
+- I know this was one of the main points in the feedback. I had previously tested this and it worked fine, however after submitting the project I had to change my gmail password for security reasons. 
+
+- Changing the email password also resets the app password that I linked to the email system, I didn't know that.
+
+I have added a new app password to the website and everything works fine now.
+
+
+## Confirmation Emails for registration and purchase
+- This was also related to the app pass issue stated above.
+
+This functionality also works now that I've re-added a new app password.
+
+<details><summary>Screenshot as proof</summary>
+<img src="media/proofofemail.JPG">
+</details>
+
+## Validation Tools
+
+- I ran the code through validation tools and made the required changes, I will post screenshots blow:
+
+## Pep8 Validator
+
+- I checked every single python page and they all passed with no errors. Here are some example screenshots of the code passing
+<details><summary>Bag App Views</summary>
+<img src="media/bagviewspep8.JPG">
+</details>
+
+<details><summary>Checkout App Views</summary>
+<img src="media/checkoutviewspep8.JPG">
+</details>
+ 
+<details><summary>Products App Views</summary>
+<img src="media/productsviewspep8.JPG">
+</details>
+
+<details><summary>Profile App Views</summary>
+<img src="media/profileviewspep8.JPG">
+</details>
+
+<details><summary>Wishlist App Views</summary>
+<img src="media/wishlistviewspep8.JPG">
+</details>
+
+
+## Html Validator
+
+- I tested every page and there were no major errors, sometimes there is an error on the product details page for a stray "article" tag but that only happens because of my "if" statement, the article tag is not stray. 
+
+- The warnings are from the mailchimp code which I copied from their site. You can see that in the screenshots below (note: The screenshots are taken of the local website tests but I tested the live version afterwards as well):
+
+<details><summary>Home</summary>
+<img src="media/home.JPG">
+</details>
+
+<details><summary>Contact</summary>
+<img src="media/contact.JPG">
+</details>
+
+<details><summary>Product Detail</summary>
+<img src="media/productdetail.JPG">
+</details>
+
+<details><summary>Products</summary>
+<img src="media/productshtml.JPG">
+</details>
+
+<details><summary>Register</summary>
+<img src="media/registerhtml.JPG">
+</details>
+
+
+- The ones that require a signed in user, I copy pasted the html manually for the test.
+
+
+# Django Models
+
+- Another big point of the feedback was not enough complexity or customization of django models / database schema.
+
+To fix these issues I have taken the following steps: 
+
+## Existing Models
+- I have customised the existing Order model to include a maintenance cost field.
+- This adds a daily maintenance cost equal to 4% of the cars value per day.
+- I've also added the supporting code for this to include it in the checkout etc. 
+
+## New Models
+- I have added 3 new models which have the following functionality:
+    1. ReviewCar - Lets authorized users leave reviews on specific cars.
+    2. ContactUs - Lets every user contact us via a front-end form.
+    3. Wishlist - Lets authorized users add specific cars to their wishlists and displays them in a separate template.
+### ReviewCar
+
+- I added a model in the Product app that adds review functionality.
+- This functionality lets a registered user rate a car from 1 to 5 stars.
+- Along with the rating the user can input a message title and the message itself.
+- Once submitted the review is displayed for all to see on that specific cars page.
+- I also added an option to remove the review if you are the original user who submitted it or if you are an admin user.
+- Credits: [Rathan Kumar](https://www.youtube.com/@rathankumar), [CodeWithStein](https://www.youtube.com/@CodeWithStein/featured), [codexdude](https://www.youtube.com/@codexdude2248) As well as taking some inspiration from [Clay and Fire](https://github.com/SamanthaBooth81/clay_and_fire) by Samantha Booth.
+
+<details><summary>ReviewCar Table</summary>
+<img src="media/reviewcarmodel.JPG">
+</details>
+
+### ContactUs
+
+- I added a new app called contact with its own template , views, model etc.
+- This adds functionality for the user to able to contact site admins through a frontend form.
+- The user has to fill in his email, name, message title, message and what the message is regarding.
+- Once the user submits his message, the admin can read it in the admin panel and reply to him when necessary.
+- I also added a feature where the admin can tick a box if he has already replied to this message, for easier managing.
+- Credits: The html template is adapted from this [codepen](https://codepen.io/atakde/pen/oNoqWjw) along with the CSS as well. Some of the python is also adapted from various StackOverload replies and received many pointers on this from my mentor Victor.
+
+<details><summary>ContactUs Table</summary>
+<img src="media/contactusmodel.JPG">
+</details>
+
+### Wishlist
+
+- I added a new app called Wishlist with its own template, views, model etc.
+- This app allows an authorized user to add a car he likes to a wishlist so he can come back to it later.
+- Basically once the car is saved (added to the wishlist) the user can navigate to his Wishlist page and see every single car he's saved along with some important stats including Horse Power and Top Speed.
+- The user can Add a car to his wishlist by navigating normally to that cars product page and clicking on the Wishlist + button which is animated and easy to read.
+- Once the car has been added, the wishlist+ button turns into a wishlish- and the icon also changes from a plus heart to a minus heart , this lets the user know that you can now remove the car from wishlist using that button.
+- When viewing the wishlist page, there is a "Remove" button that the user can click to remove the car from his wishlist as well.
+- Credits: I took inspiration [from this video by Very Academy](https://www.youtube.com/watch?v=OgA0TTKAtqQ&list=PLOLrQ9Pn6caxY4Q1U9RjO1bulQp5NDYS_&index=7) as well as [Clay and Fire](https://github.com/SamanthaBooth81/clay_and_fire). 
+
+<details><summary>Wishlist Table</summary>
+<img src="media/wishlistmodel.JPG">
+</details>
+
+### Date Select
+- I also got some feedback on the calendar date select input (product detail page) , that you shouldn't be allowed to select a date in the past.
+
+I have fixed this issue with a piece of javascript code I put together from StackOverload. 
+
+Now the minimum date dynamically adjusts to todays date and you cannot select any day in the past.
+
+![newdate](media/newdateinput.JPG)
+
+
+
+

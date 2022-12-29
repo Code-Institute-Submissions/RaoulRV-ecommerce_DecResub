@@ -162,6 +162,10 @@ def delete_product(request, product_id):
     return redirect(reverse("products"))
 
 
+"""This submit_review code was inspired by Rathnam Kumar, \
+codewithstein and clay and fire by samantha booth"""
+
+
 def submit_review(request, product_id):
     product = get_object_or_404(Carlist, pk=product_id)
     if request.method == 'POST':
