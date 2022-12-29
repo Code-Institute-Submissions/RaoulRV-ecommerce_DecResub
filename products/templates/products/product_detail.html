@@ -57,7 +57,7 @@
                     {% if user.is_authenticated %}
                     {% if is_in_wishlist %}
                     <a id="wishlista" href="{% url 'remove_from_wishlist' product.id 'wishlist_cars' %}">
-                        <button class="btn btn-wishlist" id="wishlistbutton">
+                        <div class="btn btn-wishlist" id="wishlistbutton">
                             <svg width="56px" height="48px" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M 0 0
                                     L 56 0
@@ -74,12 +74,12 @@
                                     Wishlist -
                                 </span>
                             </div>
-                        </button>
+                        </div>
                     </a>
                     {% else %}
                     <!-- Wishlist button html is taken from codepen -->
                     <a id="wishlista" href="{% url 'add_to_wishlist' product.id %}">
-                        <button class="btn btn-wishlist" id="wishlistbutton">
+                        <div class="btn btn-wishlist" id="wishlistbutton">
                             <svg width="56px" height="48px" version="1.1" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M 0 0
                                     L 56 0
@@ -96,7 +96,7 @@
                                     Wishlist +
                                 </span>
                             </div>
-                        </button>
+                        </div>
                     </a>
                     {% endif %}
                     {% endif %}
