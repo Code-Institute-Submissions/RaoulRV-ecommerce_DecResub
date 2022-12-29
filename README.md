@@ -669,9 +669,9 @@ This functionality also works now that I've re-added a new app password.
 
 ## Html Validator
 
-- I tested every page and there were no major errors, sometimes there is an error on the product details page for a stray "article" tag but that only happens because of my "if" statement, the article tag is not stray. 
+- I tested every page and there were no major errors.
 
-- The warnings are from the mailchimp code which I copied from their site. You can see that in the screenshots below (note: The screenshots are taken of the local website tests but I tested the live version afterwards as well):
+- The warnings are from the mailchimp code which I copied from their site. You can see that in the screenshots below:
 
 <details><summary>Home</summary>
 <img src="media/home.JPG">
@@ -694,7 +694,19 @@ This functionality also works now that I've re-added a new app password.
 </details>
 
 
-- The ones that require a signed in user, I copy pasted the html manually for the test.
+- The ones that require a signed in user, I copy pasted the source code manually for the test.
+
+<details><summary>Wishlist</summary>
+<img src="media/wishlisthtml.JPG">
+</details>
+
+<details><summary>Profile</summary>
+<img src="media/profilehtml.JPG">
+</details>
+
+<details><summary>Shopping Cart</summary>
+<img src="media/shoppingcarthtml.JPG">
+</details>
 
 
 # Django Models
